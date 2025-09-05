@@ -1,53 +1,45 @@
+🌐 Aditya TV – Developer Portfolio 🚀
+
 Welcome to my personal developer portfolio! 🚀
-I'm Sharath N S, a passionate and creative full-stack web developer with a knack for building dynamic and user-friendly web applications. This portfolio is a digital reflection of my journey, skills, projects, and growth as a software engineer.
+I'm Aditya TV, a passionate and creative developer with a strong interest in AI, Machine Learning, and Full-Stack Development. This portfolio is a digital reflection of my journey, skills, projects, and growth as a computer science student and developer.
 
 🧠 About Me
-I'm currently pursuing my Bachelor's in Computer Science and Business Systems at Dr. Ambedkar Institute of Technology. I'm enthusiastic about exploring cutting-edge technologies and solving real-world problems through code.
 
-💡 “Code is not just syntax; it's a form of expression.”
+🎓 Pursuing B.Tech in Computer Science and Business Systems at Dr. Ambedkar Institute of Technology, Bengaluru.
+💡 I believe “Code is not just syntax; it’s a form of expression and problem-solving.”
+⚡ Curious about AI-powered solutions and enjoy building projects that solve real-world problems.
 
 🛠️ Tech Stack
+
 Frontend: HTML5, CSS3, JavaScript, React.js
-
 Backend: Node.js, Express.js
-
-Database: MongoDB
-
+Database: MongoDB, MySQL
 Tools: Git, GitHub, VS Code, Postman
-
 Other Skills: API Integration, Responsive Design, Prompt Engineering, Data Structures in C++
 
 💼 What You’ll Find in This Portfolio
+
 ✅ About Me Section
-
 ✅ Skills & Tools
-
 ✅ Live Projects with links
-
 ✅ Resume Download
-
-✅ Contact Form
-
+✅ Contact Form (Formspree integration)
 ✅ Clean, responsive UI
 
-🔗 https://sharath-holla.github.io/my_portfolio/
-Click here to view my live portfolio
+🔗 Live Portfolio Link:
+👉 https://adityatv-lab.github.io/portfolio/
 
 🚀 Featured Projects
 Project	Description	Live Link
-📝 To-Do List	A dynamic task manager with full CRUD ops.	View
-🧮 Calculator	A basic calculator with clean UI.	View
-❌ Tic Tac Toe	Classic game built with JS & DOM skills.	View
-⏰ Clock Watch	Stylish digital clock for web.	View
-🏕️ YelpCamp	Full-stack campground listing platform.	View
+🧮 iPhone Calculator	A stunning iOS-style calculator built with HTML, CSS, and JS	View
 
-📄 Resume
-You can download my resume directly from the Resume Section of the portfolio (Replace with the actual link if hosted).
+🏕️ YelpCamp	Full-stack campground listing app with Node.js, Express, and MongoDB	View
 
-📬 Contact Me
-Have an opportunity or just want to connect?
-Feel free to reach out through the contact form on the site, or shoot me an email at:
-📧 nssharath123@gmail.com
+⏰ 3D Clock	Interactive 3D solar-style clock built with WebGL + Three.js	View
+
+🏋🏻‍♀️ Gym-Management System Using Phpmyadmin, HTML, CSS, Tailwind, Xampp
+
+🧑🏻‍🎓 Student Performance Tracking System using, Phpmyadmin, HTML, CSS, Tailwind, Xampp, Node.js
 
 💖 Support
 If you like what you see, feel free to ⭐ the repo and follow me on GitHub!

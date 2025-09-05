@@ -2,7 +2,7 @@
 
 Welcome to my personal developer portfolio! 🚀  
 I'm **Aditya TV**, a passionate and creative developer with a strong interest in **AI, Machine Learning, and Full-Stack Development**.  
-This portfolio is a digital reflection of my journey, skills, projects, and growth as a Computer Science student and developer.
+This portfolio is a digital reflection of my journey, skills, and projects.
 
 ---
 
@@ -10,31 +10,16 @@ This portfolio is a digital reflection of my journey, skills, projects, and grow
 
 - 🎓 Pursuing **B.Tech in Computer Science and Business Systems** at **Dr. Ambedkar Institute of Technology, Bengaluru**  
 - 💡 I believe: _“Code is not just syntax; it’s a form of expression and problem-solving.”_  
-- ⚡ Enthusiastic about **AI-powered solutions** and enjoy building impactful projects.
 
 ---
 
 ## 🛠️ Tech Stack
 
-**Frontend:** HTML5, CSS3, JavaScript, React.js  
+**Frontend:** HTML5, CSS3, JavaScript  
 **Backend:** Node.js, Express.js  
 **Database:** MongoDB, MySQL  
-**Tools:** Git, GitHub, VS Code, Postman  
-**Other Skills:** API Integration, Responsive Design, Prompt Engineering, Data Structures in C++
-
----
-
-## 💼 What You’ll Find in This Portfolio
-
-✅ About Me Section  
-✅ Skills & Tools  
-✅ Live Projects with links  
-✅ Resume Download (PDF)  
-✅ Contact Form (Formspree integration)  
-✅ Clean, responsive UI  
-
-🔗 **Live Portfolio Link:**  
-👉 [View Portfolio](https://adityatv-lab.github.io/aditya-portfolio/)
+**Tools:** Git, GitHub, VS Code  
+**Other Skills:** API Integration, Responsive Design, Data Structures in C++
 
 ---
 
@@ -42,21 +27,18 @@ This portfolio is a digital reflection of my journey, skills, projects, and grow
 
 | Project | Description | Live Link |
 |---------|-------------|-----------|
-| 🧮 **iPhone Calculator** | A stunning iOS-style calculator built with HTML, CSS, and JS | [View](https://adityatv-lab.github.io/glass-calculator/) |
-| 🏕️ **YelpCamp** | Full-stack campground listing app with Node.js, Express, and MongoDB | [View](https://yelpcamp-z5vj.onrender.com) |
-| ⏰ **3D Clock** | Interactive 3D solar-style clock built with WebGL + Three.js | [View](https://adityatv-lab.github.io/Clock-3d/) |
+| 🧮 **iPhone Calculator** | A stunning iOS-style calculator built with HTML, CSS, and JS. Responsive UI with custom animations. | [View](https://adityatv-lab.github.io/glass-calculator/) |
+| 🏕️ **YelpCamp** | A full-stack web app where users can create, view, and review campgrounds. Built with Node.js, Express, MongoDB, and Mapbox. | [View](https://yelpcamp-z5vj.onrender.com) |
+| ⏰ **3D Clock** | An interactive 3D solar-style clock built with WebGL + Three.js. Allows rotation, zoom, and shows live time. | [View](https://adityatv-lab.github.io/Clock-3d/) |
 
 ---
 
 ## 🧩 Mini Projects
 
-| Project | Description | Live Link |
-|---------|-------------|-----------|
-| 📝 **To-Do List** | A task manager with add, delete, and edit functionality | [View](#) |
-| ❌ **Tic Tac Toe** | A classic game built with HTML, CSS, and JS | [View](#) |
-| ⏱️ **Stopwatch** | A stylish stopwatch with start, stop, and reset | [View](#) |
-| 🏋️ **Gym Management System** | A web-based system to manage memberships, trainers, and schedules (HTML, CSS, JS, PHPMyAdmin) | [View](#) |
-| 🎓 **Student Performance Tracker** | A platform for tracking and analyzing student performance data (HTML, CSS, JS, XAMPP) | [View](#) |
+| Project | Description |
+|---------|-------------|
+| 🏋️ **Gym Management System** | A web-based system to manage gym memberships, trainers, and schedules. Built with HTML, CSS, JS, and PHPMyAdmin. |
+| 🎓 **Student Performance Tracker** | A platform for tracking and analyzing student performance data. Built with HTML, CSS, JS, and XAMPP. |
 
 ---
 
@@ -74,4 +56,5 @@ This portfolio is a digital reflection of my journey, skills, projects, and grow
 💻 GitHub: [github.com/adityatv-lab](https://github.com/adityatv-lab)
 
 ---
-✨ _Thanks for visiting my portfolio repo! Feedback and suggestions are always welcome._
+✨ _Thanks for visiting my portfolio repo!_
+po! Feedback and suggestions are always welcome._

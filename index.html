@@ -63,7 +63,6 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    /* Full-bleed edge-to-edge layout across all Mac & external displays */
     body {
       font-family: var(--font-body);
       line-height: 1.5;
@@ -361,7 +360,7 @@
       background-color: var(--bg-secondary);
     }
 
-    /* Correctly Aligned Portrait Frame */
+    /* Portrait Image Frame */
     .hero-avatar-window {
       padding: 1.5rem;
       border-bottom: 1px solid var(--border-color);
@@ -389,7 +388,7 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      object-position: center top; /* Centers face and keeps head fully visible */
+      object-position: center top;
       display: block;
       transition: transform var(--transition-snappy);
     }
@@ -1106,10 +1105,15 @@
       color: var(--accent-swiss);
     }
 
-    /* RESPONSIVE BREAKPOINTS */
+    /* ==========================================================================
+       RESPONSIVE BREAKPOINTS (DESKTOP, TABLET & IPHONE / MOBILE OPTIMIZED)
+       ========================================================================== */
     @media (max-width: 1180px) {
+      .hero-section {
+        grid-template-columns: 1fr 340px;
+      }
       .work-row {
-        grid-template-columns: 40px 90px 1.5fr 1.8fr auto;
+        grid-template-columns: 40px 95px 1.5fr 1.8fr auto;
       }
       .work-tags {
         display: none;
@@ -1122,13 +1126,6 @@
       }
       .meta-cell:nth-child(3), .meta-cell:nth-child(4) {
         border-top: 1px solid var(--border-color);
-      }
-      .hero-section {
-        grid-template-columns: 1fr;
-      }
-      .hero-primary {
-        border-right: none;
-        border-bottom: 1px solid var(--border-color);
       }
       .skills-matrix {
         grid-template-columns: repeat(2, 1fr);
@@ -1150,64 +1147,323 @@
       }
     }
 
+    /* IPHONE & MOBILE SPECIFIC OPTIMIZATIONS (320px - 768px) */
     @media (max-width: 768px) {
+      /* Absolute horizontal containment */
+      html, body {
+        overflow-x: hidden;
+        width: 100%;
+        max-width: 100vw;
+      }
+
+      /* Compact single-row top meta strip (prevents 2-column wrapping overflow) */
+      .top-meta-strip {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.5rem 1rem;
+        font-size: 0.65rem;
+      }
+      .meta-cell {
+        padding: 0;
+        border: none;
+      }
+      .meta-cell:nth-child(2),
+      .meta-cell:nth-child(4) {
+        display: none;
+      }
+
+      /* Streamlined mobile header (avoids 480px width blowout) */
       header.site-header {
-        grid-template-columns: 1fr auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: stretch;
+        height: 56px;
+      }
+      .brand-block {
+        padding: 0 1rem;
+        border-right: none;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      .brand-title {
+        font-size: 1.05rem;
+      }
+      .brand-subtitle {
+        display: none;
       }
       nav.site-nav {
         display: none;
       }
-      section.content-section {
-        grid-template-columns: 1fr;
+      .header-actions {
+        display: flex;
+        align-items: stretch;
       }
-      .section-sidebar {
+      .header-linkedin-btn {
+        display: none;
+      }
+      .cv-btn, .theme-toggle-btn {
+        padding: 0 0.85rem;
+        font-size: 0.72rem;
+        letter-spacing: 0.02em;
+      }
+
+      /* Hero Section: Centered & Proportionate */
+      .hero-section {
+        display: flex;
+        flex-direction: column;
+      }
+      .hero-primary {
+        padding: 2.25rem 1.25rem 1.75rem 1.25rem;
         border-right: none;
         border-bottom: 1px solid var(--border-color);
-        padding: 1.75rem 1.5rem;
       }
-      .about-grid, .archive-grid, .contact-container {
-        grid-template-columns: 1fr;
+      .hero-kicker {
+        font-size: 0.7rem;
+        margin-bottom: 0.85rem;
       }
-      .about-block, .archive-card, .contact-details {
+      .hero-title {
+        font-size: clamp(2.2rem, 9.5vw, 3.2rem);
+        line-height: 0.98;
+        margin-bottom: 1.5rem;
+        letter-spacing: -0.03em;
+        word-break: break-word;
+      }
+      .hero-statement {
+        font-size: 1rem;
+        line-height: 1.5;
+        padding-left: 1rem;
+        margin-bottom: 1.75rem;
+      }
+
+      /* Social Links: Clean 2x2 grid on iPhone */
+      .hero-social-strip {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.5rem;
+        width: 100%;
+      }
+      .social-pill {
+        justify-content: center;
+        text-align: center;
+        padding: 0.65rem 0.5rem;
+        font-size: 0.72rem;
+        white-space: nowrap;
+      }
+
+      /* Avatar Window: Proportionate and Centered */
+      .hero-side-panel {
+        display: flex;
+        flex-direction: column;
+      }
+      .hero-avatar-window {
+        padding: 1.75rem 1.25rem 1.25rem 1.25rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .avatar-frame {
+        width: 100%;
+        max-width: 250px;
+        aspect-ratio: 3 / 4;
+        margin: 0 auto;
+        border: 1px solid var(--border-color);
+      }
+      .avatar-frame img {
+        object-position: center top;
+      }
+      .avatar-caption {
+        max-width: 250px;
+        margin: 0.5rem auto 0 auto;
+      }
+
+      .hero-side-meta {
+        padding: 1.25rem;
+      }
+      .hero-quick-index {
+        padding: 1.25rem;
+      }
+      .hero-actions-panel {
+        padding: 1.25rem;
+      }
+
+      /* Sections & Sidebars: Clean integrated mobile headings */
+      section.content-section {
+        display: flex;
+        flex-direction: column;
+      }
+      .section-sidebar {
+        padding: 1rem 1.25rem;
         border-right: none;
-        padding: 1.75rem 1.5rem;
+        border-bottom: 1px solid var(--border-color);
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: baseline;
       }
-      .contact-form-wrap {
-        padding: 1.75rem 1.5rem;
+      .section-index-badge {
+        font-size: 1.15rem;
+        margin-bottom: 0;
+        margin-right: 0.5rem;
+        display: inline-block;
       }
+      .section-heading {
+        font-size: 1.25rem;
+        display: inline;
+      }
+      .section-subtext {
+        display: none;
+      }
+
+      /* Section 01: About Specification */
+      .about-grid {
+        display: flex;
+        flex-direction: column;
+      }
+      .about-block {
+        padding: 1.75rem 1.25rem;
+        border-right: none;
+        border-bottom: 1px solid var(--border-color);
+      }
+      .about-block:last-child {
+        border-bottom: none;
+      }
+      .spec-table {
+        table-layout: fixed;
+        width: 100%;
+      }
+      .spec-table td.spec-key {
+        width: 42%;
+        font-size: 0.7rem;
+      }
+      .spec-table td.spec-val {
+        font-size: 0.82rem;
+        word-break: break-word;
+        overflow-wrap: anywhere;
+      }
+
+      /* Section 02: Selected Works Mobile Cards */
       .work-row {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-        padding: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1.5rem 1.25rem;
+        gap: 0.75rem;
+      }
+      .work-num {
+        font-size: 0.8rem;
       }
       .project-preview-window {
         width: 100%;
-        height: 140px;
+        height: auto;
+        aspect-ratio: 16 / 10;
+        max-height: 200px;
+      }
+      .work-title {
+        font-size: 1.2rem;
+      }
+      .work-desc {
+        font-size: 0.85rem;
+        padding-right: 0;
+      }
+      .work-tags {
+        margin-top: 0.25rem;
       }
       .work-actions {
-        justify-content: flex-start;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        width: 100%;
+        gap: 0.5rem;
         margin-top: 0.5rem;
       }
+      .btn-live-launch, .action-link-btn {
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+        padding: 0.65rem 0.5rem;
+        font-size: 0.75rem;
+      }
+
+      /* Section 03: Capabilities 2-column data sheet */
       .skills-matrix {
-        grid-template-columns: 1fr;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
       }
       .matrix-column {
+        padding: 1.25rem 1rem;
+        border-right: 1px solid var(--border-color);
+        border-bottom: 1px solid var(--border-color);
+      }
+      .matrix-column:nth-child(2n) {
+        border-right: none;
+      }
+      .col-title {
+        font-size: 0.85rem;
+      }
+      .skill-item {
+        font-size: 0.78rem;
+        padding-bottom: 0.35rem;
+      }
+
+      /* Section 04: Systems Archive Cards */
+      .archive-grid {
+        display: flex;
+        flex-direction: column;
+      }
+      .archive-card {
+        padding: 1.75rem 1.25rem;
+        border-right: none;
+      }
+      .archive-preview-window {
+        height: auto;
+        aspect-ratio: 16 / 10;
+        max-height: 180px;
+      }
+
+      /* Section 05: Contact & Form */
+      .contact-container {
+        display: flex;
+        flex-direction: column;
+      }
+      .contact-details {
+        padding: 2rem 1.25rem;
         border-right: none;
         border-bottom: 1px solid var(--border-color);
       }
-      .hero-primary {
-        padding: 2.5rem 1.5rem;
+      .contact-lead {
+        font-size: 1.75rem;
       }
-      .hero-title {
-        font-size: 2.75rem;
+      .contact-sub {
+        font-size: 0.9rem;
+        margin-bottom: 1.5rem;
       }
+      .direct-value {
+        font-size: 1.05rem;
+        word-break: break-word;
+        overflow-wrap: anywhere;
+      }
+      .contact-form-wrap {
+        padding: 2rem 1.25rem;
+      }
+      .form-field input,
+      .form-field textarea {
+        font-size: 16px !important;
+        padding: 0.85rem 1rem;
+      }
+
+      /* Footer on mobile */
       footer.site-footer {
-        grid-template-columns: 1fr;
+        display: flex;
+        flex-direction: column;
       }
       .footer-cell {
         border-right: none;
         border-bottom: 1px solid var(--border-color);
-        padding: 1.25rem 1.5rem;
+        padding: 1.25rem;
+      }
+      .footer-cell:last-child {
+        border-bottom: none;
       }
     }
   </style>
@@ -1262,7 +1518,7 @@
     </div>
   </header>
 
-  <!-- HERO POSTER SECTION (FULL-BLEED EDGE-TO-EDGE) -->
+  <!-- HERO POSTER SECTION -->
   <div class="hero-section">
     <div class="hero-primary">
       <div>
@@ -1279,7 +1535,6 @@
           Computer Science and Business Systems engineer specializing in AI/ML pipelines, WebGL spatial interactions, and scalable full-stack web platforms. Focused on precision, performance, and clean architectural clarity.
         </div>
 
-        <!-- Social Networks Hub with LinkedIn Prominently Featured -->
         <div class="hero-social-strip">
           <a href="https://www.linkedin.com/in/aditiya-tv-9ba0982b5/" target="_blank" rel="noopener noreferrer" class="social-pill linkedin">
             <span>LinkedIn Profile &nearr;</span>
@@ -1419,7 +1674,7 @@
     </div>
   </section>
 
-  <!-- SECTION 02: SELECTED WORKS (WITH SMALL PREVIEW WINDOWS & ORIGINAL LIVE LINKS) -->
+  <!-- SECTION 02: SELECTED WORKS -->
   <section class="content-section" id="projects">
     <div class="section-sidebar">
       <div>
@@ -1673,6 +1928,7 @@
     <div class="section-main">
       <div class="archive-grid">
         
+        <!-- Archive 01: Gym Management System -->
         <div class="archive-card">
           <div class="archive-card-top">
             <div class="archive-preview-window">
@@ -1698,6 +1954,7 @@
           </div>
         </div>
 
+        <!-- Archive 02: Student Performance Tracker -->
         <div class="archive-card">
           <div class="archive-card-top">
             <div class="archive-preview-window">
@@ -1847,7 +2104,9 @@
     </div>
   </footer>
 
+  <!-- SCRIPT: CLOCK, THEME, AND AJAX FORMSPREE SUBMISSION -->
   <script>
+    // 1. Live Bengaluru Chronometer
     function updateClock() {
       const now = new Date();
       const options = {
@@ -1866,6 +2125,7 @@
     setInterval(updateClock, 1000);
     updateClock();
 
+    // 2. Swiss High-Contrast Theme Toggle
     const themeBtn = document.getElementById('theme-toggle');
     const themeLabel = document.getElementById('theme-label');
     
@@ -1894,6 +2154,7 @@
       }
     }
 
+    // 3. Asynchronous Formspree Dispatch
     const form = document.getElementById('portfolio-form');
     const formStatus = document.getElementById('form-status');
     const submitBtn = document.getElementById('submit-btn');

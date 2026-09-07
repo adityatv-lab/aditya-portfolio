@@ -1,203 +1,1611 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ADITYA TV — Software Engineer & Developer</title>
+  <meta name="description" content="Portfolio of Aditya TV — Software Engineer, Full-Stack Developer, and AI/ML Specialist based in Bengaluru, India. Designed in Swiss International Typographic Style." />
+  
+  <!-- Typography: Inter & Space Grotesk via Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
 
-  <!-- --------- UNICONS ---------- -->
-  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+  <style>
+    /* ==========================================================================
+       SWISS INTERNATIONAL TYPOGRAPHIC DESIGN SYSTEM
+       Strict Grid • Objective Typography • High Contrast • Vermilion Accent
+       ========================================================================== */
+    :root {
+      --bg-primary: #f6f6f4;
+      --bg-secondary: #eeeeec;
+      --bg-surface: #ffffff;
+      --text-main: #0c0c0c;
+      --text-muted: #5e5e5b;
+      --text-faint: #8f8f8b;
+      --border-color: #d8d8d3;
+      --border-dark: #0c0c0c;
+      --accent-swiss: #ff3300; /* Swiss Vermilion */
+      --accent-hover: #d92b00;
+      --grid-line: rgba(12, 12, 12, 0.08);
+      --font-grotesk: 'Space Grotesk', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      --font-body: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+      --transition-snappy: 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+    }
 
-  <!-- --------- CSS ---------- -->
-  <link rel="stylesheet" href="assets/css/style.css">
+    [data-theme="dark"] {
+      --bg-primary: #0a0a0a;
+      --bg-secondary: #141414;
+      --bg-surface: #111111;
+      --text-main: #f5f5f3;
+      --text-muted: #9c9c96;
+      --text-faint: #61615c;
+      --border-color: #262624;
+      --border-dark: #f5f5f3;
+      --grid-line: rgba(255, 255, 255, 0.06);
+    }
 
-  <!-- --------- FAVICON ---------- -->
-  <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon">
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-  <title>Portfolio | Aditya TV</title>
+    html {
+      font-size: 16px;
+      scroll-behavior: smooth;
+      background-color: var(--bg-primary);
+      color: var(--text-main);
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      font-family: var(--font-body);
+      line-height: 1.5;
+      overflow-x: hidden;
+      background-color: var(--bg-primary);
+      color: var(--text-main);
+      border-left: 1px solid var(--border-color);
+      border-right: 1px solid var(--border-color);
+      max-width: 1440px;
+      margin: 0 auto;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    ::selection {
+      background: var(--accent-swiss);
+      color: #ffffff;
+    }
+
+    /* TOP UTILITY STRIP */
+    .top-meta-strip {
+      display: grid;
+      grid-template-columns: 2fr 1.5fr 1.5fr 1fr;
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      border-bottom: 1px solid var(--border-color);
+      background-color: var(--bg-surface);
+      color: var(--text-muted);
+    }
+
+    .meta-cell {
+      padding: 0.6rem 1.25rem;
+      border-right: 1px solid var(--border-color);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .meta-cell:last-child {
+      border-right: none;
+      justify-content: flex-end;
+    }
+
+    .status-dot {
+      width: 7px;
+      height: 7px;
+      background-color: #10b981;
+      border-radius: 50%;
+      display: inline-block;
+      animation: pulse-dot 2s infinite ease-in-out;
+    }
+
+    @keyframes pulse-dot {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(0.85); }
+    }
+
+    /* SITE HEADER */
+    header.site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background-color: var(--bg-surface);
+      border-bottom: 2px solid var(--border-dark);
+      display: grid;
+      grid-template-columns: 320px 1fr auto;
+      align-items: stretch;
+    }
+
+    .brand-block {
+      padding: 1.25rem 1.5rem;
+      border-right: 1px solid var(--border-color);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .brand-title {
+      font-family: var(--font-grotesk);
+      font-size: 1.25rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--text-main);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .brand-title .red-square {
+      width: 8px;
+      height: 8px;
+      background-color: var(--accent-swiss);
+      display: inline-block;
+    }
+
+    .brand-subtitle {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      letter-spacing: 0.05em;
+      margin-top: 0.2rem;
+      text-transform: uppercase;
+    }
+
+    nav.site-nav {
+      display: flex;
+      align-items: stretch;
+      overflow-x: auto;
+    }
+
+    .nav-item {
+      display: flex;
+      align-items: center;
+      padding: 0 1.5rem;
+      border-right: 1px solid var(--border-color);
+      font-family: var(--font-grotesk);
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: var(--text-main);
+      transition: background var(--transition-snappy), color var(--transition-snappy);
+    }
+
+    .nav-item span.index-tag {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      color: var(--accent-swiss);
+      margin-right: 0.45rem;
+      font-weight: 500;
+    }
+
+    .nav-item:hover {
+      background-color: var(--text-main);
+      color: var(--bg-surface);
+    }
+
+    .nav-item:hover span.index-tag {
+      color: var(--accent-swiss);
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: stretch;
+    }
+
+    .theme-toggle-btn, .cv-btn {
+      padding: 0 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: none;
+      border: none;
+      border-left: 1px solid var(--border-color);
+      cursor: pointer;
+      font-family: var(--font-grotesk);
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--text-main);
+      text-decoration: none;
+      transition: all var(--transition-snappy);
+    }
+
+    .cv-btn {
+      background-color: var(--accent-swiss);
+      color: #ffffff;
+    }
+    .cv-btn:hover {
+      background-color: var(--border-dark);
+      color: var(--bg-surface);
+    }
+
+    .theme-toggle-btn:hover {
+      background-color: var(--bg-secondary);
+    }
+
+    /* HERO SECTION */
+    .hero-section {
+      display: grid;
+      grid-template-columns: 1fr 340px;
+      border-bottom: 2px solid var(--border-dark);
+      background-color: var(--bg-surface);
+    }
+
+    .hero-primary {
+      padding: 4rem 3rem;
+      border-right: 1px solid var(--border-color);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .hero-kicker {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--accent-swiss);
+      margin-bottom: 2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .hero-kicker::before {
+      content: "—";
+      font-weight: 700;
+    }
+
+    .hero-title {
+      font-family: var(--font-grotesk);
+      font-size: clamp(2.8rem, 6.2vw, 5.75rem);
+      font-weight: 800;
+      line-height: 0.94;
+      letter-spacing: -0.04em;
+      text-transform: uppercase;
+      color: var(--text-main);
+      margin-bottom: 2.5rem;
+    }
+
+    .hero-title .highlight-red {
+      color: var(--accent-swiss);
+    }
+
+    .hero-statement {
+      font-size: 1.25rem;
+      line-height: 1.5;
+      color: var(--text-muted);
+      max-width: 680px;
+      font-weight: 400;
+      border-left: 2px solid var(--accent-swiss);
+      padding-left: 1.25rem;
+    }
+
+    .hero-side-panel {
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      background-color: var(--bg-secondary);
+    }
+
+    .hero-side-meta {
+      padding: 1.5rem;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .side-meta-label {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--text-faint);
+      margin-bottom: 0.35rem;
+    }
+
+    .side-meta-value {
+      font-family: var(--font-grotesk);
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text-main);
+    }
+
+    .hero-quick-index {
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .quick-index-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      font-size: 0.85rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px dashed var(--border-color);
+    }
+
+    .quick-index-item .num {
+      font-family: var(--font-mono);
+      color: var(--accent-swiss);
+      font-size: 0.75rem;
+    }
+
+    .hero-actions-panel {
+      padding: 1.5rem;
+      border-top: 1px solid var(--border-color);
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .btn-solid {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.9rem 1.25rem;
+      background-color: var(--text-main);
+      color: var(--bg-surface);
+      text-decoration: none;
+      font-family: var(--font-grotesk);
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      transition: background var(--transition-snappy);
+    }
+    .btn-solid:hover {
+      background-color: var(--accent-swiss);
+      color: #ffffff;
+    }
+
+    .btn-outline {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.9rem 1.25rem;
+      background-color: transparent;
+      border: 1px solid var(--border-dark);
+      color: var(--text-main);
+      text-decoration: none;
+      font-family: var(--font-grotesk);
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      transition: all var(--transition-snappy);
+    }
+    .btn-outline:hover {
+      background-color: var(--text-main);
+      color: var(--bg-surface);
+    }
+
+    /* SECTION STRUCTURE */
+    section.content-section {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      border-bottom: 2px solid var(--border-dark);
+      background-color: var(--bg-surface);
+    }
+
+    .section-sidebar {
+      padding: 2.5rem 1.75rem;
+      border-right: 1px solid var(--border-color);
+      background-color: var(--bg-secondary);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .section-index-badge {
+      font-family: var(--font-mono);
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--accent-swiss);
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+
+    .section-heading {
+      font-family: var(--font-grotesk);
+      font-size: 1.75rem;
+      font-weight: 700;
+      line-height: 1.05;
+      text-transform: uppercase;
+      letter-spacing: -0.02em;
+      color: var(--text-main);
+    }
+
+    .section-subtext {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: var(--text-faint);
+      margin-top: 0.5rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .section-main {
+      padding: 0;
+    }
+
+    /* ABOUT SPECIFICATION */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .about-block {
+      padding: 2.5rem;
+      border-right: 1px solid var(--border-color);
+    }
+    .about-block:last-child {
+      border-right: none;
+    }
+
+    .block-label {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--accent-swiss);
+      margin-bottom: 1rem;
+      display: block;
+      font-weight: 600;
+    }
+
+    .about-text {
+      font-size: 1.05rem;
+      line-height: 1.6;
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+    }
+
+    .spec-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+    }
+
+    .spec-table tr {
+      border-bottom: 1px solid var(--border-color);
+    }
+    .spec-table tr:last-child {
+      border-bottom: none;
+    }
+
+    .spec-table td {
+      padding: 0.75rem 0;
+      font-size: 0.88rem;
+    }
+    .spec-table td.spec-key {
+      font-family: var(--font-mono);
+      color: var(--text-faint);
+      width: 40%;
+      text-transform: uppercase;
+      font-size: 0.75rem;
+    }
+    .spec-table td.spec-val {
+      font-weight: 600;
+      color: var(--text-main);
+    }
+
+    /* SELECTED WORKS */
+    .works-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .work-row {
+      display: grid;
+      grid-template-columns: 70px 1.8fr 2.5fr 1.5fr 140px;
+      align-items: center;
+      padding: 1.75rem 2rem;
+      border-bottom: 1px solid var(--border-color);
+      text-decoration: none;
+      color: var(--text-main);
+      transition: background var(--transition-snappy), transform var(--transition-snappy);
+    }
+
+    .work-row:hover {
+      background-color: var(--bg-secondary);
+    }
+    .work-row:hover .work-title {
+      color: var(--accent-swiss);
+    }
+    .work-row:hover .work-arrow {
+      transform: translate(4px, -4px);
+      color: var(--accent-swiss);
+    }
+
+    .work-num {
+      font-family: var(--font-mono);
+      font-size: 0.9rem;
+      color: var(--accent-swiss);
+      font-weight: 600;
+    }
+
+    .work-title-group {
+      padding-right: 1.5rem;
+    }
+
+    .work-title {
+      font-family: var(--font-grotesk);
+      font-size: 1.35rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      transition: color var(--transition-snappy);
+    }
+
+    .work-category {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      color: var(--text-faint);
+      letter-spacing: 0.06em;
+      margin-top: 0.2rem;
+    }
+
+    .work-desc {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.45;
+      padding-right: 1.5rem;
+    }
+
+    .work-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+    }
+
+    .tag-chip {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      padding: 0.2rem 0.5rem;
+      background-color: var(--bg-primary);
+      border: 1px solid var(--border-color);
+      color: var(--text-main);
+      text-transform: uppercase;
+    }
+
+    .work-actions {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .action-link-btn {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: var(--text-main);
+      border-bottom: 1px solid var(--text-main);
+      padding-bottom: 2px;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      transition: all var(--transition-snappy);
+    }
+    .action-link-btn:hover {
+      color: var(--accent-swiss);
+      border-color: var(--accent-swiss);
+    }
+
+    .work-arrow {
+      font-size: 1.1rem;
+      transition: transform var(--transition-snappy), color var(--transition-snappy);
+    }
+
+    /* SKILLS MATRIX */
+    .skills-matrix {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .matrix-column {
+      padding: 2.25rem 1.75rem;
+      border-right: 1px solid var(--border-color);
+    }
+    .matrix-column:last-child {
+      border-right: none;
+    }
+
+    .column-header {
+      border-bottom: 2px solid var(--border-dark);
+      padding-bottom: 0.75rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .col-num {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      color: var(--accent-swiss);
+      display: block;
+      margin-bottom: 0.25rem;
+    }
+
+    .col-title {
+      font-family: var(--font-grotesk);
+      font-size: 1.05rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: -0.01em;
+    }
+
+    .skill-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+    }
+
+    .skill-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--text-main);
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .skill-item span.code-tag {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      color: var(--text-faint);
+    }
+
+    /* ARCHIVE & EXPERIMENTS */
+    .archive-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .archive-card {
+      padding: 2.25rem;
+      border-right: 1px solid var(--border-color);
+      border-bottom: 1px solid var(--border-color);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: background var(--transition-snappy);
+    }
+    .archive-card:nth-child(2n) {
+      border-right: none;
+    }
+    .archive-card:hover {
+      background-color: var(--bg-secondary);
+    }
+
+    .archive-meta {
+      display: flex;
+      justify-content: space-between;
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--accent-swiss);
+      margin-bottom: 0.75rem;
+    }
+
+    .archive-title {
+      font-family: var(--font-grotesk);
+      font-size: 1.25rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      margin-bottom: 0.6rem;
+    }
+
+    .archive-desc {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+      margin-bottom: 1.5rem;
+    }
+
+    /* CONTACT SECTION */
+    .contact-container {
+      display: grid;
+      grid-template-columns: 1fr 1.25fr;
+    }
+
+    .contact-details {
+      padding: 3rem;
+      border-right: 1px solid var(--border-color);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .contact-lead {
+      font-family: var(--font-grotesk);
+      font-size: 2.25rem;
+      font-weight: 700;
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+      text-transform: uppercase;
+      margin-bottom: 1.25rem;
+    }
+
+    .contact-sub {
+      font-size: 1rem;
+      color: var(--text-muted);
+      margin-bottom: 2.5rem;
+      max-width: 400px;
+    }
+
+    .contact-links-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .contact-direct-item {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+
+    .direct-label {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--text-faint);
+    }
+
+    .direct-value {
+      font-family: var(--font-grotesk);
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--text-main);
+      text-decoration: none;
+      transition: color var(--transition-snappy);
+    }
+    .direct-value:hover {
+      color: var(--accent-swiss);
+    }
+
+    .contact-form-wrap {
+      padding: 3rem;
+      background-color: var(--bg-surface);
+    }
+
+    .swiss-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.75rem;
+    }
+
+    .form-field {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      position: relative;
+    }
+
+    .form-field label {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-weight: 600;
+      color: var(--text-main);
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .form-field label span.field-num {
+      color: var(--accent-swiss);
+    }
+
+    .form-field input,
+    .form-field textarea {
+      width: 100%;
+      padding: 0.9rem 1rem;
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      background-color: var(--bg-primary);
+      border: 1px solid var(--border-color);
+      border-radius: 0;
+      color: var(--text-main);
+      transition: border-color var(--transition-snappy), background var(--transition-snappy);
+      outline: none;
+    }
+
+    .form-field input:focus,
+    .form-field textarea:focus {
+      border-color: var(--border-dark);
+      background-color: var(--bg-surface);
+      box-shadow: inset 0 0 0 1px var(--border-dark);
+    }
+
+    .form-field textarea {
+      min-height: 130px;
+      resize: vertical;
+    }
+
+    .form-submit-btn {
+      padding: 1.1rem 2rem;
+      background-color: var(--accent-swiss);
+      color: #ffffff;
+      border: none;
+      font-family: var(--font-grotesk);
+      font-size: 0.95rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: background var(--transition-snappy);
+    }
+    .form-submit-btn:hover {
+      background-color: var(--border-dark);
+    }
+
+    /* COLOPHON & FOOTER */
+    footer.site-footer {
+      background-color: var(--bg-surface);
+      border-top: 1px solid var(--border-color);
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr auto;
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+    }
+
+    .footer-cell {
+      padding: 1.75rem 2rem;
+      border-right: 1px solid var(--border-color);
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+      color: var(--text-muted);
+    }
+
+    .footer-cell:last-child {
+      border-right: none;
+      justify-content: center;
+    }
+
+    .footer-cell a {
+      color: var(--text-main);
+      text-decoration: none;
+      transition: color var(--transition-snappy);
+    }
+    .footer-cell a:hover {
+      color: var(--accent-swiss);
+    }
+
+    .back-top-btn {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      cursor: pointer;
+      font-weight: 700;
+      color: var(--text-main);
+      text-decoration: none;
+    }
+    .back-top-btn:hover {
+      color: var(--accent-swiss);
+    }
+
+    /* RESPONSIVE BREAKPOINTS */
+    @media (max-width: 1080px) {
+      .top-meta-strip {
+        grid-template-columns: 1fr 1fr;
+      }
+      .meta-cell:nth-child(2) {
+        border-right: none;
+      }
+      .meta-cell:nth-child(3), .meta-cell:nth-child(4) {
+        border-top: 1px solid var(--border-color);
+      }
+      .hero-section {
+        grid-template-columns: 1fr;
+      }
+      .hero-primary {
+        border-right: none;
+        border-bottom: 1px solid var(--border-color);
+      }
+      .skills-matrix {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .matrix-column:nth-child(2) {
+        border-right: none;
+      }
+      .matrix-column:nth-child(3), .matrix-column:nth-child(4) {
+        border-top: 1px solid var(--border-color);
+      }
+      .work-row {
+        grid-template-columns: 50px 1.5fr 2fr 1fr auto;
+      }
+      footer.site-footer {
+        grid-template-columns: 1fr 1fr;
+      }
+      .footer-cell:nth-child(2) {
+        border-right: none;
+      }
+      .footer-cell:nth-child(3), .footer-cell:nth-child(4) {
+        border-top: 1px solid var(--border-color);
+      }
+    }
+
+    @media (max-width: 768px) {
+      body {
+        border: none;
+      }
+      header.site-header {
+        grid-template-columns: 1fr auto;
+      }
+      nav.site-nav {
+        display: none;
+      }
+      section.content-section {
+        grid-template-columns: 1fr;
+      }
+      .section-sidebar {
+        border-right: none;
+        border-bottom: 1px solid var(--border-color);
+        padding: 1.75rem 1.5rem;
+      }
+      .about-grid, .archive-grid, .contact-container {
+        grid-template-columns: 1fr;
+      }
+      .about-block, .archive-card, .contact-details {
+        border-right: none;
+        padding: 1.75rem 1.5rem;
+      }
+      .contact-form-wrap {
+        padding: 1.75rem 1.5rem;
+      }
+      .work-row {
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+        padding: 1.5rem;
+      }
+      .work-actions {
+        justify-content: flex-start;
+      }
+      .skills-matrix {
+        grid-template-columns: 1fr;
+      }
+      .matrix-column {
+        border-right: none;
+        border-bottom: 1px solid var(--border-color);
+      }
+      .hero-primary {
+        padding: 2.5rem 1.5rem;
+      }
+      .hero-title {
+        font-size: 2.75rem;
+      }
+      footer.site-footer {
+        grid-template-columns: 1fr;
+      }
+      .footer-cell {
+        border-right: none;
+        border-bottom: 1px solid var(--border-color);
+        padding: 1.25rem 1.5rem;
+      }
+    }
+  </style>
 </head>
+
 <body>
-  <div class="container">
 
-    <!-- --------------- HEADER --------------- -->
-    <nav id="header">
-      <div class="nav-logo">
-        <p class="nav-name">ADITYA TV</p>
-        <span>.</span>
-      </div>
-      <div class="nav-menu" id="myNavMenu">
-        <ul class="nav_menu_list">
-          <li class="nav_list"><a href="#home" class="nav-link active-link">Home</a><div class="circle"></div></li>
-          <li class="nav_list"><a href="#about" class="nav-link">About</a><div class="circle"></div></li>
-          <li class="nav_list"><a href="#projects" class="nav-link">Projects</a><div class="circle"></div></li>
-          <li class="nav_list"><a href="#contact" class="nav-link">Contact</a><div class="circle"></div></li>
-        </ul>
-      </div>
-      <div class="nav-button">
-        <a href="assets/cv.pdf" download><button class="btn">Download CV <i class="uil uil-file-alt"></i></button></a>
-      </div>
-      <div class="nav-menu-btn"><i class="uil uil-bars" onclick="myMenuFunction()"></i></div>
-    </nav>
-
-    <!-- -------------- MAIN ---------------- -->
-    <main class="wrapper">
-
-      <!-- -------------- FEATURED BOX ---------------- -->
-      <section class="featured-box" id="home">
-        <div class="featured-text">
-          <div class="featured-text-card"><span>Aditya TV</span></div>
-          <div class="featured-name"><p>I'm <span class="typedText"></span></p></div>
-          <div class="featured-text-info">
-            <p>B.Tech Computer Science and Business Systems student at Dr. Ambedkar Institute of Technology, Bengaluru. Passionate about AI, Machine Learning, and Full-Stack Development.</p>
-          </div>
-          <div class="featured-text-btn">
-            <a href="assets/cv.pdf" download><button class="btn">Download CV <i class="uil uil-file-alt"></i></button></a>
-          </div>
-          <div class="social_icons">
-            <a href="https://www.linkedin.com/in/aditiya-tv-9ba0982b5/" target="_blank"><div class="icon"><i class="uil uil-linkedin-alt"></i></div></a>
-            <a href="https://github.com/adityatv-lab" target="_blank"><div class="icon"><i class="uil uil-github-alt"></i></div></a>
-          </div><br>
-        </div>
-        <div class="featured-image">
-          <div class="image"><img src="assets/images/avatar.jpg" alt="avatar"></div>
-        </div>
-      </section>
-
-      <!-- -------------- ABOUT BOX ---------------- -->
-      <section class="section" id="about">
-        <div class="top-header"><h1>About Me</h1></div>
-        <div class="row">
-          <div class="col">
-            <div class="about-info">
-              <h3>My Introduction</h3>
-              <p>I am pursuing B.Tech in Computer Science and Business Systems at Dr. Ambedkar Institute of Technology, Bengaluru.  
-              Skilled in programming (C, C++, Java, Python, JavaScript) and web development (HTML, CSS, React, Node.js).  
-              Passionate about AI, ML, and building impactful full-stack applications.</p>
-              <div class="about-btn">
-                <a href="assets/cv.pdf" download><button class="btn">Download CV <i class="uil uil-import"></i></button></a>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="skills-container">
-              <!-- keep your skills here -->
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- -------------- PROJECT BOX ---------------- -->
-      <section class="section" id="projects">
-        <div class="top-header"><h1>Projects</h1></div>
-        <div class="project-container">
-
-          <!-- Project 1 -->
-          <div class="project-card">
-            <img src="assets/images/calculator.jpg" alt="iPhone Calculator Screenshot">
-            <h3>iPhone Calculator</h3>
-            <p>A stunning iOS-style calculator built using HTML, CSS, and JavaScript with responsive UI and custom animations.</p>
-            <a href="https://adityatv-lab.github.io/glass-calculator/" target="_blank" class="project-link">View Project</a>
-          </div>
-
-          <!-- Project 2 -->
-          <div class="project-card">
-            <img src="assets/images/YelpCamp.png" alt="YelpCamp Screenshot">
-            <h3>YelpCamp</h3>
-            <p>A full-stack web app where users can create, view, and review campgrounds. Built with Node.js, Express, MongoDB, and Mapbox.</p>
-            <a href="https://yelpcamp-z5vj.onrender.com" target="_blank" class="project-link">View Project</a>
-          </div>
-
-          <!-- Project 3 -->
-          <div class="project-card">
-            <img src="assets/images/clock.jpg" alt="3D Clock Screenshot">
-            <h3>3D Clock</h3>
-            <p>An interactive 3D clock built with WebGL and Three.js. Allows rotation, zoom, and shows live time with a stunning 3D solar-style design.</p>
-            <a href="https://adityatv-lab.github.io/Clock-3d/" target="_blank" class="project-link">View Project</a>
-          </div>
-
-        </div>
-      </section>
-
-      <!-- -------------- MINI PROJECTS ---------------- -->
-      <section class="section" id="mini-projects">
-        <div class="top-header"><h1>Mini Projects</h1></div>
-        <div class="project-container">
-
-          <!-- Mini Project 1 -->
-          <div class="project-card">
-            <img src="assets/images/gymmang.jpeg" alt="Gym Management System Screenshot">
-            <h3>Gym Management System</h3>
-            <p>A web-based system to manage gym memberships, trainers, and schedules. Built with HTML, CSS, JS, and PHPMyAdmin.</p>
-          </div>
-
-          <!-- Mini Project 2 -->
-          <div class="project-card">
-            <img src="assets/images/studentperfo.jpeg" alt="Student Performance Tracker Screenshot">
-            <h3>Student Performance Tracker</h3>
-            <p>A platform for teachers to track and analyze student performance data. Built with HTML, CSS, JS, and XAMPP.</p>
-          </div>
-
-        </div>
-      </section>
-
-      <!-- -------------- CONTACT BOX ---------------- -->
-      <section class="section" id="contact">
-        <div class="top-header">
-          <h1>Get in touch</h1>
-          <span>Do you have a project in your mind? Contact me here</span>
-        </div>
-        <div class="row">
-          <div class="col">
-            <div class="contact-info">
-              <h2>Find Me <i class="uil uil-corner-right-down"></i></h2>
-              <p><i class="uil uil-envelope"></i> Email: aditiyaaditv@gmail.com</p>
-              <p><i class="uil uil-phone"></i> Mob: +91 9036412907</p>
-            </div>
-          </div>
-          <div class="col">
-            <form action="https://formspree.io/f/xnnbokop" method="POST">
-              <div class="form-inputs">
-                <input type="text" name="name" class="input-field" placeholder="Name" required>
-                <input type="email" name="email" class="input-field" placeholder="Email" required>
-              </div>
-              <div class="text-area">
-                <textarea name="message" placeholder="Message" required></textarea>
-              </div>
-              <div class="form-button">
-                <button type="submit" class="btn">Send <i class="uil uil-message"></i></button>
-              </div>
-            </form>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <!-- --------------- FOOTER --------------- -->
-    <footer>
-      <div class="top-footer"><p>Aditya TV</p></div>
-      <div class="middle-footer">
-        <ul class="footer-menu">
-          <li><a href="#home">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </div>
-      <div class="footer-social-icons">
-        <div class="social_icons">
-          <a href="https://www.linkedin.com/in/aditiya-tv-9ba0982b5/" target="_blank"><div class="icon"><i class="uil uil-linkedin-alt"></i></div></a>
-          <a href="https://github.com/adityatv-lab" target="_blank"><div class="icon"><i class="uil uil-github-alt"></i></div></a>
-           <a href="https://www.instagram.com/adityatv_/" target="_blank"><div class="icon"><i class="uil uil-instagram-alt"></i></div></a>
-        </div>
-      </div>
-      <div class="bottom-footer"><p>Copyright &copy; <a href="#home">Aditya TV</a> - All rights reserved</p></div>
-    </footer>
+  <!-- 00 / SYSTEM METADATA STRIP -->
+  <div class="top-meta-strip">
+    <div class="meta-cell">
+      <span class="status-dot"></span>
+      <span>STATUS: ACTIVE &bull; AVAILABLE FOR ROLES</span>
+    </div>
+    <div class="meta-cell">
+      <span>LOCATION: BENGALURU, INDIA [12.97° N, 77.59° E]</span>
+    </div>
+    <div class="meta-cell">
+      <span id="live-clock">LOCAL: 00:00:00 IST</span>
+    </div>
+    <div class="meta-cell">
+      <span>SYS.VER: 2026.09</span>
+    </div>
   </div>
 
-  <!-- ----- TYPING JS Link ----- -->
-  <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
-  <!-- ----- SCROLL REVEAL JS Link----- -->
-  <script src="https://unpkg.com/scrollreveal"></script>
-  <!-- ----- MAIN JS ----- -->
-  <script src="assets/js/main.js"></script>
+  <!-- SITE HEADER & MASTHEAD -->
+  <header class="site-header">
+    <div class="brand-block">
+      <a href="#" class="brand-title">
+        <span class="red-square"></span> ADITYA TV
+      </a>
+      <div class="brand-subtitle">Software Engineer &bull; B.Tech CSBS</div>
+    </div>
+
+    <nav class="site-nav" aria-label="Main Navigation">
+      <a href="#about" class="nav-item"><span class="index-tag">01</span>About</a>
+      <a href="#projects" class="nav-item"><span class="index-tag">02</span>Selected Works</a>
+      <a href="#skills" class="nav-item"><span class="index-tag">03</span>Capabilities</a>
+      <a href="#archive" class="nav-item"><span class="index-tag">04</span>Archive</a>
+      <a href="#contact" class="nav-item"><span class="index-tag">05</span>Dispatch</a>
+    </nav>
+
+    <div class="header-actions">
+      <button class="theme-toggle-btn" id="theme-toggle" title="Toggle Light/Dark Display" aria-label="Toggle Theme">
+        <span id="theme-label">DARK [O]</span>
+      </button>
+      <a href="#contact" class="cv-btn">Get In Touch &rarr;</a>
+    </div>
+  </header>
+
+  <!-- HERO POSTER SECTION -->
+  <div class="hero-section">
+    <div class="hero-primary">
+      <div>
+        <div class="hero-kicker">International Typographic Portfolio</div>
+        <h1 class="hero-title">
+          Engineering <br />
+          Intelligent <br />
+          <span class="highlight-red">Systems</span> &amp; Web.
+        </h1>
+      </div>
+
+      <div class="hero-statement">
+        Computer Science and Business Systems engineer specializing in AI/ML pipelines, WebGL spatial interactions, and scalable full-stack web platforms. Focused on precision, performance, and clean architectural clarity.
+      </div>
+    </div>
+
+    <aside class="hero-side-panel">
+      <div class="hero-side-meta">
+        <div class="side-meta-label">Discipline / Background</div>
+        <div class="side-meta-value">B.E. Computer Science &amp; Business Systems</div>
+        <div class="side-meta-label" style="margin-top: 0.75rem;">Institution</div>
+        <div class="side-meta-value">Dr. Ambedkar Institute of Technology</div>
+      </div>
+
+      <div class="hero-quick-index">
+        <div class="side-meta-label">Curated Directory</div>
+        <a href="#projects" class="quick-index-item" style="text-decoration: none; color: inherit;">
+          <span>Selected Projects</span>
+          <span class="num">[04 Items]</span>
+        </a>
+        <a href="#skills" class="quick-index-item" style="text-decoration: none; color: inherit;">
+          <span>Technical Stack</span>
+          <span class="num">[4 Domains]</span>
+        </a>
+        <a href="#archive" class="quick-index-item" style="text-decoration: none; color: inherit;">
+          <span>Systems &amp; Mini-Projects</span>
+          <span class="num">[02 Items]</span>
+        </a>
+        <a href="https://github.com/adityatv-lab" target="_blank" rel="noopener noreferrer" class="quick-index-item" style="text-decoration: none; color: inherit;">
+          <span>GitHub Lab Repository</span>
+          <span class="num">&nearr;</span>
+        </a>
+      </div>
+
+      <div class="hero-actions-panel">
+        <a href="#projects" class="btn-solid">
+          <span>Explore Works</span>
+          <span>&darr;</span>
+        </a>
+        <a href="https://github.com/adityatv-lab" target="_blank" rel="noopener noreferrer" class="btn-outline">
+          <span>GitHub Profile</span>
+          <span>&nearr;</span>
+        </a>
+      </div>
+    </aside>
+  </div>
+
+  <!-- SECTION 01: ABOUT -->
+  <section class="content-section" id="about">
+    <div class="section-sidebar">
+      <div>
+        <span class="section-index-badge">01</span>
+        <h2 class="section-heading">About &amp;<br />Profile</h2>
+        <div class="section-subtext">Biographical &amp; Academic Data</div>
+      </div>
+      <div class="side-meta-label">[INDEX REF &bull; BIO-01]</div>
+    </div>
+
+    <div class="section-main">
+      <div class="about-grid">
+        <div class="about-block">
+          <span class="block-label">&mdash; Philosophy &amp; Focus</span>
+          <p class="about-text">
+            I am a software engineer studying Computer Science and Business Systems at Dr. Ambedkar Institute of Technology, Bengaluru. My work bridges technical rigor with practical product design—from predictive algorithmic models to interactive 3D spatial computing.
+          </p>
+          <p class="about-text">
+            I build systems that solve real-world problems through clean modular code, functional simplicity, and high computational efficiency.
+          </p>
+        </div>
+
+        <div class="about-block">
+          <span class="block-label">&mdash; Technical Specifications</span>
+          <table class="spec-table">
+            <tbody>
+              <tr>
+                <td class="spec-key">Full Name</td>
+                <td class="spec-val">Aditya TV</td>
+              </tr>
+              <tr>
+                <td class="spec-key">Degree</td>
+                <td class="spec-val">B.Tech / B.E. in CSBS</td>
+              </tr>
+              <tr>
+                <td class="spec-key">Primary Focus</td>
+                <td class="spec-val">AI/ML &bull; Full-Stack &bull; Graphics</td>
+              </tr>
+              <tr>
+                <td class="spec-key">Location</td>
+                <td class="spec-val">Bengaluru, Karnataka, India</td>
+              </tr>
+              <tr>
+                <td class="spec-key">Languages</td>
+                <td class="spec-val">English, Kannada, Hindi</td>
+              </tr>
+              <tr>
+                <td class="spec-key">Availability</td>
+                <td class="spec-val" style="color: var(--accent-swiss);">Open for Full-Time &amp; Intern Roles</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 02: SELECTED WORKS -->
+  <section class="content-section" id="projects">
+    <div class="section-sidebar">
+      <div>
+        <span class="section-index-badge">02</span>
+        <h2 class="section-heading">Selected<br />Works</h2>
+        <div class="section-subtext">Engineered Deployments &amp; Case Studies</div>
+      </div>
+      <div class="side-meta-label">[INDEX REF &bull; PROJ-02]</div>
+    </div>
+
+    <div class="section-main">
+      <div class="works-table">
+        
+        <!-- PROJECT 01: AICardio -->
+        <div class="work-row">
+          <div class="work-num">/01</div>
+          <div class="work-title-group">
+            <h3 class="work-title">AICardio</h3>
+            <div class="work-category">Machine Learning &bull; Health Tech</div>
+          </div>
+          <div class="work-desc">
+            Intelligent heart disease risk prediction platform built on structured clinical biomarker datasets. Utilizes decision trees and cross-validation pipelines to output instantaneous probabilistic risk metrics.
+          </div>
+          <div class="work-tags">
+            <span class="tag-chip">Python</span>
+            <span class="tag-chip">Scikit-Learn</span>
+            <span class="tag-chip">ML Pipelines</span>
+            <span class="tag-chip">Streamlit</span>
+          </div>
+          <div class="work-actions">
+            <a href="https://github.com/adityatv-lab" target="_blank" rel="noopener noreferrer" class="action-link-btn">Code &nearr;</a>
+            <span class="work-arrow">&rarr;</span>
+          </div>
+        </div>
+
+        <!-- PROJECT 02: YelpCamp -->
+        <div class="work-row">
+          <div class="work-num">/02</div>
+          <div class="work-title-group">
+            <h3 class="work-title">YelpCamp</h3>
+            <div class="work-category">Full-Stack Application &bull; Cloud</div>
+          </div>
+          <div class="work-desc">
+            Full-stack campground discovery and review portal featuring user authentication, session security, geographic clustering with Mapbox GL, and RESTful database management.
+          </div>
+          <div class="work-tags">
+            <span class="tag-chip">Node.js</span>
+            <span class="tag-chip">Express</span>
+            <span class="tag-chip">MongoDB</span>
+            <span class="tag-chip">Mapbox GL</span>
+          </div>
+          <div class="work-actions">
+            <a href="https://github.com/adityatv-lab" target="_blank" rel="noopener noreferrer" class="action-link-btn">Code &nearr;</a>
+            <span class="work-arrow">&rarr;</span>
+          </div>
+        </div>
+
+        <!-- PROJECT 03: 3D Solar Clock -->
+        <div class="work-row">
+          <div class="work-num">/03</div>
+          <div class="work-title-group">
+            <h3 class="work-title">3D Solar Clock</h3>
+            <div class="work-category">Interactive Graphics &bull; WebGL</div>
+          </div>
+          <div class="work-desc">
+            Spatial real-time astronomical chronometer rendered in WebGL. Implements orbit controls, dynamic lighting shaders, and orbital mechanics to visualize local wall-clock time in a 3D celestial arena.
+          </div>
+          <div class="work-tags">
+            <span class="tag-chip">Three.js</span>
+            <span class="tag-chip">WebGL</span>
+            <span class="tag-chip">JavaScript</span>
+            <span class="tag-chip">GLSL</span>
+          </div>
+          <div class="work-actions">
+            <a href="https://github.com/adityatv-lab" target="_blank" rel="noopener noreferrer" class="action-link-btn">Code &nearr;</a>
+            <span class="work-arrow">&rarr;</span>
+          </div>
+        </div>
+
+        <!-- PROJECT 04: Telegram Gemini Bot -->
+        <div class="work-row">
+          <div class="work-num">/04</div>
+          <div class="work-title-group">
+            <h3 class="work-title">Telegram Gemini Bot</h3>
+            <div class="work-category">LLM Automation &bull; Backend API</div>
+          </div>
+          <div class="work-desc">
+            Production-grade conversational assistant deployed on Render integrating Gemini generative models into Telegram with webhook architecture and asynchronous response streaming.
+          </div>
+          <div class="work-tags">
+            <span class="tag-chip">Python</span>
+            <span class="tag-chip">Flask</span>
+            <span class="tag-chip">Gemini API</span>
+            <span class="tag-chip">Render</span>
+          </div>
+          <div class="work-actions">
+            <a href="https://github.com/adityatv-lab" target="_blank" rel="noopener noreferrer" class="action-link-btn">Code &nearr;</a>
+            <span class="work-arrow">&rarr;</span>
+          </div>
+        </div>
+
+        <!-- PROJECT 05: iOS Calculator -->
+        <div class="work-row">
+          <div class="work-num">/05</div>
+          <div class="work-title-group">
+            <h3 class="work-title">iOS Calculator</h3>
+            <div class="work-category">UI/UX Emulation &bull; Frontend</div>
+          </div>
+          <div class="work-desc">
+            Pixel-perfect emulation of the iOS native calculator featuring dynamic state evaluation, floating-point calculation edge case handling, and fluid responsive tactile feedback.
+          </div>
+          <div class="work-tags">
+            <span class="tag-chip">JavaScript</span>
+            <span class="tag-chip">CSS Grid</span>
+            <span class="tag-chip">Semantic HTML</span>
+          </div>
+          <div class="work-actions">
+            <a href="https://github.com/adityatv-lab" target="_blank" rel="noopener noreferrer" class="action-link-btn">Code &nearr;</a>
+            <span class="work-arrow">&rarr;</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 03: CAPABILITIES (SKILLS MATRIX) -->
+  <section class="content-section" id="skills">
+    <div class="section-sidebar">
+      <div>
+        <span class="section-index-badge">03</span>
+        <h2 class="section-heading">Technical<br />Capabilities</h2>
+        <div class="section-subtext">Structured Competency Inventory</div>
+      </div>
+      <div class="side-meta-label">[INDEX REF &bull; CAP-03]</div>
+    </div>
+
+    <div class="section-main">
+      <div class="skills-matrix">
+        
+        <!-- Column 1: Core Languages -->
+        <div class="matrix-column">
+          <div class="column-header">
+            <span class="col-num">[01]</span>
+            <div class="col-title">Core Languages</div>
+          </div>
+          <ul class="skill-list">
+            <li class="skill-item"><span>Python</span><span class="code-tag">PY</span></li>
+            <li class="skill-item"><span>C++</span><span class="code-tag">CPP</span></li>
+            <li class="skill-item"><span>Java</span><span class="code-tag">JV</span></li>
+            <li class="skill-item"><span>C</span><span class="code-tag">C</span></li>
+            <li class="skill-item"><span>JavaScript</span><span class="code-tag">ES6+</span></li>
+            <li class="skill-item"><span>SQL</span><span class="code-tag">DB</span></li>
+          </ul>
+        </div>
+
+        <!-- Column 2: Frontend & Graphics -->
+        <div class="matrix-column">
+          <div class="column-header">
+            <span class="col-num">[02]</span>
+            <div class="col-title">Frontend &amp; 3D</div>
+          </div>
+          <ul class="skill-list">
+            <li class="skill-item"><span>React.js</span><span class="code-tag">UI</span></li>
+            <li class="skill-item"><span>Three.js</span><span class="code-tag">3D</span></li>
+            <li class="skill-item"><span>WebGL</span><span class="code-tag">GPU</span></li>
+            <li class="skill-item"><span>Mapbox GL</span><span class="code-tag">GEO</span></li>
+            <li class="skill-item"><span>HTML5 &amp; CSS3</span><span class="code-tag">WEB</span></li>
+            <li class="skill-item"><span>Responsive Grid</span><span class="code-tag">CSS</span></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Backend & Data -->
+        <div class="matrix-column">
+          <div class="column-header">
+            <span class="col-num">[03]</span>
+            <div class="col-title">Backend &amp; Cloud</div>
+          </div>
+          <ul class="skill-list">
+            <li class="skill-item"><span>Node.js</span><span class="code-tag">SRV</span></li>
+            <li class="skill-item"><span>Express.js</span><span class="code-tag">API</span></li>
+            <li class="skill-item"><span>MongoDB</span><span class="code-tag">NOSQL</span></li>
+            <li class="skill-item"><span>Flask</span><span class="code-tag">PY-API</span></li>
+            <li class="skill-item"><span>RESTful Architecture</span><span class="code-tag">HTTP</span></li>
+            <li class="skill-item"><span>Cloud Computing</span><span class="code-tag">NPTEL</span></li>
+          </ul>
+        </div>
+
+        <!-- Column 4: AI & Machine Learning -->
+        <div class="matrix-column">
+          <div class="column-header">
+            <span class="col-num">[04]</span>
+            <div class="col-title">AI &amp; Systems</div>
+          </div>
+          <ul class="skill-list">
+            <li class="skill-item"><span>Scikit-Learn</span><span class="code-tag">ML</span></li>
+            <li class="skill-item"><span>Decision Trees</span><span class="code-tag">ALG</span></li>
+            <li class="skill-item"><span>Model Regularization</span><span class="code-tag">STATS</span></li>
+            <li class="skill-item"><span>AI Agent Systems</span><span class="code-tag">LLM</span></li>
+            <li class="skill-item"><span>Git &amp; GitHub</span><span class="code-tag">VCS</span></li>
+            <li class="skill-item"><span>Linux &amp; Bash</span><span class="code-tag">OS</span></li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 04: ARCHIVE & MINI PROJECTS -->
+  <section class="content-section" id="archive">
+    <div class="section-sidebar">
+      <div>
+        <span class="section-index-badge">04</span>
+        <h2 class="section-heading">Systems<br />Archive</h2>
+        <div class="section-subtext">Utility Software &amp; Mini-Projects</div>
+      </div>
+      <div class="side-meta-label">[INDEX REF &bull; ARC-04]</div>
+    </div>
+
+    <div class="section-main">
+      <div class="archive-grid">
+        
+        <!-- Archive 01 -->
+        <div class="archive-card">
+          <div>
+            <div class="archive-meta">
+              <span>SYSTEM #01</span>
+              <span>2024 &bull; WEB &bull; DATABASE</span>
+            </div>
+            <h3 class="archive-title">Gym Management System</h3>
+            <p class="archive-desc">
+              A comprehensive relational management utility engineered to handle member lifecycle billing, trainer session schedules, and operational reporting. Built with pure modular HTML/CSS/JS frontend and relational database structure.
+            </p>
+          </div>
+          <div>
+            <div class="work-tags" style="margin-bottom: 1rem;">
+              <span class="tag-chip">JavaScript</span>
+              <span class="tag-chip">PHPMyAdmin</span>
+              <span class="tag-chip">MySQL</span>
+              <span class="tag-chip">CSS</span>
+            </div>
+            <a href="https://github.com/adityatv-lab" target="_blank" rel="noopener noreferrer" class="action-link-btn">Repository &nearr;</a>
+          </div>
+        </div>
+
+        <!-- Archive 02 -->
+        <div class="archive-card">
+          <div>
+            <div class="archive-meta">
+              <span>SYSTEM #02</span>
+              <span>2024 &bull; ANALYTICS</span>
+            </div>
+            <h3 class="archive-title">Student Performance Tracker</h3>
+            <p class="archive-desc">
+              An institutional academic metrics dashboard designed for teachers and administrators to log, calculate, and evaluate continuous student progress, GPA aggregates, and performance indices.
+            </p>
+          </div>
+          <div>
+            <div class="work-tags" style="margin-bottom: 1rem;">
+              <span class="tag-chip">PHP</span>
+              <span class="tag-chip">XAMPP</span>
+              <span class="tag-chip">JavaScript</span>
+              <span class="tag-chip">Data Tables</span>
+            </div>
+            <a href="https://github.com/adityatv-lab" target="_blank" rel="noopener noreferrer" class="action-link-btn">Repository &nearr;</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 05: DISPATCH (CONTACT) -->
+  <section class="content-section" id="contact">
+    <div class="section-sidebar">
+      <div>
+        <span class="section-index-badge">05</span>
+        <h2 class="section-heading">Direct<br />Dispatch</h2>
+        <div class="section-subtext">Contact, Inquiries &amp; Transmissions</div>
+      </div>
+      <div class="side-meta-label">[INDEX REF &bull; COM-05]</div>
+    </div>
+
+    <div class="section-main">
+      <div class="contact-container">
+        
+        <div class="contact-details">
+          <div>
+            <h3 class="contact-lead">Initiate<br />Collaboration.</h3>
+            <p class="contact-sub">
+              Have a technical project, engineering challenge, or full-time opportunity? Send an inquiry or connect across direct channels.
+            </p>
+          </div>
+
+          <div class="contact-links-stack">
+            <div class="contact-direct-item">
+              <span class="direct-label">Electronic Mail</span>
+              <a href="mailto:adityatv02@gmail.com" class="direct-value">adityatv02@gmail.com</a>
+            </div>
+            <div class="contact-direct-item">
+              <span class="direct-label">Direct Voice / Line</span>
+              <a href="tel:+919110820132" class="direct-value">+91 9110820132</a>
+            </div>
+            <div class="contact-direct-item">
+              <span class="direct-label">Base Location</span>
+              <span class="direct-value" style="font-size: 1rem;">Bengaluru, Karnataka, India</span>
+            </div>
+            <div class="contact-direct-item">
+              <span class="direct-label">Code Repositories</span>
+              <a href="https://github.com/adityatv-lab" target="_blank" rel="noopener noreferrer" class="direct-value" style="font-size: 1rem;">github.com/adityatv-lab &nearr;</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-form-wrap">
+          <form class="swiss-form" id="portfolio-form" action="mailto:adityatv02@gmail.com" method="POST" enctype="text/plain">
+            <div class="form-field">
+              <label for="form-name">
+                <span>Sender Identity / Name</span>
+                <span class="field-num">[01]</span>
+              </label>
+              <input type="text" id="form-name" name="name" placeholder="e.g. Elena Rostova" required />
+            </div>
+
+            <div class="form-field">
+              <label for="form-email">
+                <span>Contact Electronic Mail</span>
+                <span class="field-num">[02]</span>
+              </label>
+              <input type="email" id="form-email" name="email" placeholder="name@company.domain" required />
+            </div>
+
+            <div class="form-field">
+              <label for="form-message">
+                <span>Transmission Body / Message</span>
+                <span class="field-num">[03]</span>
+              </label>
+              <textarea id="form-message" name="message" placeholder="Provide project specifications, timeline, or position details..." required></textarea>
+            </div>
+
+            <button type="submit" class="form-submit-btn">
+              <span>Transmit Message</span>
+              <span>&rarr;</span>
+            </button>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- COLOPHON & FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-cell">
+      <div style="font-weight: 700; color: var(--text-main);">ADITYA TV &bull; PORTFOLIO SPECIFICATION</div>
+      <div>Designed in Swiss International Typographic Style. Built with semantic HTML, CSS grid architecture, and pure vanilla JavaScript. Zero dependencies.</div>
+    </div>
+
+    <div class="footer-cell">
+      <div style="font-weight: 600; color: var(--text-main);">INDEX PROTOCOL</div>
+      <a href="#about">01 / Profile</a>
+      <a href="#projects">02 / Selected Works</a>
+      <a href="#skills">03 / Capabilities</a>
+      <a href="#contact">05 / Dispatch</a>
+    </div>
+
+    <div class="footer-cell">
+      <div style="font-weight: 600; color: var(--text-main);">NETWORKS</div>
+      <a href="https://github.com/adityatv-lab" target="_blank" rel="noopener noreferrer">GitHub &nearr;</a>
+      <a href="mailto:adityatv02@gmail.com">Email &nearr;</a>
+      <a href="https://adityatv-lab.github.io/aditya-portfolio/" target="_blank" rel="noopener noreferrer">Original Site &nearr;</a>
+    </div>
+
+    <div class="footer-cell">
+      <a href="#" class="back-top-btn" title="Ascend to top of document">
+        <span>TOP</span>
+        <span>&uarr;</span>
+      </a>
+      <div style="margin-top: 0.5rem; color: var(--text-faint);">&copy; 2026 ADITYA TV</div>
+    </div>
+  </footer>
+
+  <!-- SCRIPT: CLOCK & THEME LOGIC -->
+  <script>
+    function updateClock() {
+      const now = new Date();
+      const options = {
+        timeZone: 'Asia/Kolkata',
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit',
+        hour12: false
+      };
+      const timeString = new Intl.DateTimeFormat('en-GB', options).format(now);
+      const clockElement = document.getElementById('live-clock');
+      if (clockElement) {
+        clockElement.textContent = `LOCAL: ${timeString} IST`;
+      }
+    }
+    setInterval(updateClock, 1000);
+    updateClock();
+
+    const themeBtn = document.getElementById('theme-toggle');
+    const themeLabel = document.getElementById('theme-label');
+    
+    const savedTheme = localStorage.getItem('swiss-theme');
+    if (savedTheme) {
+      document.documentElement.setAttribute('data-theme', savedTheme);
+      updateThemeUI(savedTheme);
+    } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      updateThemeUI('dark');
+    }
+
+    themeBtn.addEventListener('click', () => {
+      const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', newTheme);
+      localStorage.setItem('swiss-theme', newTheme);
+      updateThemeUI(newTheme);
+    });
+
+    function updateThemeUI(theme) {
+      if (theme === 'dark') {
+        themeLabel.textContent = 'LIGHT [I]';
+      } else {
+        themeLabel.textContent = 'DARK [O]';
+      }
+    }
+  </script>
 </body>
 </html>

@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ADITYA TV — Software Engineer & Developer</title>
+  <title>ADITYA TV — Software Engineer & Full-Stack Developer</title>
   <meta name="description" content="Portfolio of Aditya TV — Software Engineer, Full-Stack Developer, and AI/ML Specialist based in Bengaluru, India. Designed in Swiss International Typographic Style." />
   
-  <!-- Typography: Inter & Space Grotesk via Google Fonts -->
+  <!-- Typography: Inter, Space Grotesk & JetBrains Mono via Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
@@ -25,8 +25,9 @@
       --text-faint: #8f8f8b;
       --border-color: #d8d8d3;
       --border-dark: #0c0c0c;
-      --accent-swiss: #ff3300; /* Swiss Vermilion */
+      --accent-swiss: #ff3300; /* Iconic Swiss Vermilion */
       --accent-hover: #d92b00;
+      --success-green: #10b981;
       --grid-line: rgba(12, 12, 12, 0.08);
       --font-grotesk: 'Space Grotesk', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
       --font-body: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
@@ -110,7 +111,7 @@
     .status-dot {
       width: 7px;
       height: 7px;
-      background-color: #10b981;
+      background-color: var(--success-green);
       border-radius: 50%;
       display: inline-block;
       animation: pulse-dot 2s infinite ease-in-out;
@@ -244,10 +245,10 @@
       background-color: var(--bg-secondary);
     }
 
-    /* HERO SECTION */
+    /* HERO POSTER SECTION */
     .hero-section {
       display: grid;
-      grid-template-columns: 1fr 340px;
+      grid-template-columns: 1fr 350px;
       border-bottom: 2px solid var(--border-dark);
       background-color: var(--bg-surface);
     }
@@ -343,6 +344,12 @@
       font-size: 0.85rem;
       padding-bottom: 0.5rem;
       border-bottom: 1px dashed var(--border-color);
+      text-decoration: none;
+      color: inherit;
+      transition: color var(--transition-snappy);
+    }
+    .quick-index-item:hover {
+      color: var(--accent-swiss);
     }
 
     .quick-index-item .num {
@@ -449,7 +456,7 @@
       padding: 0;
     }
 
-    /* ABOUT SPECIFICATION */
+    /* 01 / ABOUT SPECIFICATION */
     .about-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -510,7 +517,7 @@
       color: var(--text-main);
     }
 
-    /* SELECTED WORKS */
+    /* 02 / SELECTED WORKS WITH DUAL ACTION BUTTONS (LIVE + CODE) */
     .works-table {
       width: 100%;
       border-collapse: collapse;
@@ -518,23 +525,19 @@
 
     .work-row {
       display: grid;
-      grid-template-columns: 70px 1.8fr 2.5fr 1.5fr 140px;
+      grid-template-columns: 70px 1.8fr 2.3fr 1.3fr 200px;
       align-items: center;
       padding: 1.75rem 2rem;
       border-bottom: 1px solid var(--border-color);
       text-decoration: none;
       color: var(--text-main);
-      transition: background var(--transition-snappy), transform var(--transition-snappy);
+      transition: background var(--transition-snappy);
     }
 
     .work-row:hover {
       background-color: var(--bg-secondary);
     }
     .work-row:hover .work-title {
-      color: var(--accent-swiss);
-    }
-    .work-row:hover .work-arrow {
-      transform: translate(4px, -4px);
       color: var(--accent-swiss);
     }
 
@@ -593,7 +596,27 @@
       display: flex;
       justify-content: flex-end;
       align-items: center;
-      gap: 0.75rem;
+      gap: 0.6rem;
+    }
+
+    .btn-live-launch {
+      font-family: var(--font-grotesk);
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      text-decoration: none;
+      background-color: var(--accent-swiss);
+      color: #ffffff;
+      padding: 0.45rem 0.8rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      transition: background var(--transition-snappy);
+      white-space: nowrap;
+    }
+    .btn-live-launch:hover {
+      background-color: var(--border-dark);
+      color: var(--bg-surface);
     }
 
     .action-link-btn {
@@ -603,24 +626,20 @@
       text-transform: uppercase;
       text-decoration: none;
       color: var(--text-main);
-      border-bottom: 1px solid var(--text-main);
-      padding-bottom: 2px;
+      border: 1px solid var(--border-dark);
+      padding: 0.4rem 0.7rem;
       display: inline-flex;
       align-items: center;
       gap: 0.25rem;
       transition: all var(--transition-snappy);
+      white-space: nowrap;
     }
     .action-link-btn:hover {
-      color: var(--accent-swiss);
-      border-color: var(--accent-swiss);
+      background-color: var(--text-main);
+      color: var(--bg-surface);
     }
 
-    .work-arrow {
-      font-size: 1.1rem;
-      transition: transform var(--transition-snappy), color var(--transition-snappy);
-    }
-
-    /* SKILLS MATRIX */
+    /* 03 / CAPABILITIES (SKILLS MATRIX) */
     .skills-matrix {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -680,7 +699,7 @@
       color: var(--text-faint);
     }
 
-    /* ARCHIVE & EXPERIMENTS */
+    /* 04 / ARCHIVE & EXPERIMENTS */
     .archive-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -726,7 +745,7 @@
       margin-bottom: 1.5rem;
     }
 
-    /* CONTACT SECTION */
+    /* 05 / DISPATCH (ACTIVE REPLY-RECEIVING CONTACT FORM) */
     .contact-container {
       display: grid;
       grid-template-columns: 1fr 1.25fr;
@@ -792,6 +811,9 @@
     .contact-form-wrap {
       padding: 3rem;
       background-color: var(--bg-surface);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
 
     .swiss-form {
@@ -866,6 +888,29 @@
     }
     .form-submit-btn:hover {
       background-color: var(--border-dark);
+    }
+
+    .form-status-box {
+      display: none;
+      padding: 1rem 1.25rem;
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-top: 1rem;
+      border: 1px solid var(--border-color);
+    }
+    .form-status-box.success {
+      display: block;
+      background-color: rgba(16, 185, 129, 0.1);
+      border-color: var(--success-green);
+      color: var(--success-green);
+    }
+    .form-status-box.error {
+      display: block;
+      background-color: rgba(255, 51, 0, 0.1);
+      border-color: var(--accent-swiss);
+      color: var(--accent-swiss);
     }
 
     /* COLOPHON & FOOTER */
@@ -990,6 +1035,7 @@
       }
       .work-actions {
         justify-content: flex-start;
+        margin-top: 0.5rem;
       }
       .skills-matrix {
         grid-template-columns: 1fr;
@@ -1087,19 +1133,19 @@
 
       <div class="hero-quick-index">
         <div class="side-meta-label">Curated Directory</div>
-        <a href="#projects" class="quick-index-item" style="text-decoration: none; color: inherit;">
-          <span>Selected Projects</span>
-          <span class="num">[04 Items]</span>
+        <a href="#projects" class="quick-index-item">
+          <span>Deployed Works</span>
+          <span class="num">[05 Items]</span>
         </a>
-        <a href="#skills" class="quick-index-item" style="text-decoration: none; color: inherit;">
+        <a href="#skills" class="quick-index-item">
           <span>Technical Stack</span>
           <span class="num">[4 Domains]</span>
         </a>
-        <a href="#archive" class="quick-index-item" style="text-decoration: none; color: inherit;">
+        <a href="#archive" class="quick-index-item">
           <span>Systems &amp; Mini-Projects</span>
           <span class="num">[02 Items]</span>
         </a>
-        <a href="https://github.com/adityatv-lab" target="_blank" rel="noopener noreferrer" class="quick-index-item" style="text-decoration: none; color: inherit;">
+        <a href="https://github.com/adityatv-lab" target="_blank" rel="noopener noreferrer" class="quick-index-item">
           <span>GitHub Lab Repository</span>
           <span class="num">&nearr;</span>
         </a>
@@ -1162,8 +1208,12 @@
                 <td class="spec-val">Bengaluru, Karnataka, India</td>
               </tr>
               <tr>
-                <td class="spec-key">Languages</td>
-                <td class="spec-val">English, Kannada, Hindi</td>
+                <td class="spec-key">Direct Line</td>
+                <td class="spec-val"><a href="tel:+919036412907" style="color: inherit; text-decoration: none;">+91 9036412907</a></td>
+              </tr>
+              <tr>
+                <td class="spec-key">Email</td>
+                <td class="spec-val"><a href="mailto:aditiyatv7@gmail.com" style="color: inherit; text-decoration: none;">aditiyatv7@gmail.com</a></td>
               </tr>
               <tr>
                 <td class="spec-key">Availability</td>
@@ -1176,13 +1226,13 @@
     </div>
   </section>
 
-  <!-- SECTION 02: SELECTED WORKS -->
+  <!-- SECTION 02: SELECTED WORKS (WITH DIRECT DEPLOYED LINKS) -->
   <section class="content-section" id="projects">
     <div class="section-sidebar">
       <div>
         <span class="section-index-badge">02</span>
         <h2 class="section-heading">Selected<br />Works</h2>
-        <div class="section-subtext">Engineered Deployments &amp; Case Studies</div>
+        <div class="section-subtext">Engineered Deployments &amp; Live Builds</div>
       </div>
       <div class="side-meta-label">[INDEX REF &bull; PROJ-02]</div>
     </div>
@@ -1190,15 +1240,81 @@
     <div class="section-main">
       <div class="works-table">
         
-        <!-- PROJECT 01: AICardio -->
+        <!-- PROJECT 01: iPhone Calculator -->
         <div class="work-row">
           <div class="work-num">/01</div>
           <div class="work-title-group">
-            <h3 class="work-title">AICardio</h3>
-            <div class="work-category">Machine Learning &bull; Health Tech</div>
+            <h3 class="work-title">iPhone Calculator</h3>
+            <div class="work-category">UI/UX Emulation &bull; Frontend Web</div>
           </div>
           <div class="work-desc">
-            Intelligent heart disease risk prediction platform built on structured clinical biomarker datasets. Utilizes decision trees and cross-validation pipelines to output instantaneous probabilistic risk metrics.
+            Pixel-perfect emulation of the iOS native calculator. Built using semantic HTML, CSS Grid, and vanilla JavaScript with dynamic state evaluation, floating-point calculation edge cases, and responsive tactile animations.
+          </div>
+          <div class="work-tags">
+            <span class="tag-chip">JavaScript</span>
+            <span class="tag-chip">CSS Grid</span>
+            <span class="tag-chip">Animations</span>
+            <span class="tag-chip">GH Pages</span>
+          </div>
+          <div class="work-actions">
+            <a href="https://adityatv-lab.github.io/calculator/" target="_blank" rel="noopener noreferrer" class="btn-live-launch">Live Demo &nearr;</a>
+            <a href="https://github.com/adityatv-lab/calculator" target="_blank" rel="noopener noreferrer" class="action-link-btn">Code &nearr;</a>
+          </div>
+        </div>
+
+        <!-- PROJECT 02: YelpCamp -->
+        <div class="work-row">
+          <div class="work-num">/02</div>
+          <div class="work-title-group">
+            <h3 class="work-title">YelpCamp</h3>
+            <div class="work-category">Full-Stack Application &bull; Cloud Platform</div>
+          </div>
+          <div class="work-desc">
+            Full-stack campground discovery and review web platform featuring user authentication, session authorization, image storage, geographic clustering via Mapbox GL, and RESTful MongoDB architecture.
+          </div>
+          <div class="work-tags">
+            <span class="tag-chip">Node.js</span>
+            <span class="tag-chip">Express</span>
+            <span class="tag-chip">MongoDB</span>
+            <span class="tag-chip">Mapbox GL</span>
+          </div>
+          <div class="work-actions">
+            <a href="https://yelpcamp-5l39.onrender.com" target="_blank" rel="noopener noreferrer" class="btn-live-launch">Live App &nearr;</a>
+            <a href="https://github.com/adityatv-lab/yelpcamp" target="_blank" rel="noopener noreferrer" class="action-link-btn">Code &nearr;</a>
+          </div>
+        </div>
+
+        <!-- PROJECT 03: 3D Solar Clock -->
+        <div class="work-row">
+          <div class="work-num">/03</div>
+          <div class="work-title-group">
+            <h3 class="work-title">3D Solar Clock</h3>
+            <div class="work-category">Interactive Graphics &bull; WebGL Spatial</div>
+          </div>
+          <div class="work-desc">
+            Interactive real-time 3D astronomical chronometer rendered with WebGL and Three.js. Supports 360-degree orbital drag, zoom, dynamic lighting shaders, and celestial alignment driven by live local wall-clock time.
+          </div>
+          <div class="work-tags">
+            <span class="tag-chip">Three.js</span>
+            <span class="tag-chip">WebGL</span>
+            <span class="tag-chip">JavaScript</span>
+            <span class="tag-chip">GLSL</span>
+          </div>
+          <div class="work-actions">
+            <a href="https://adityatv-lab.github.io/3d-clock/" target="_blank" rel="noopener noreferrer" class="btn-live-launch">Live Demo &nearr;</a>
+            <a href="https://github.com/adityatv-lab/3d-clock" target="_blank" rel="noopener noreferrer" class="action-link-btn">Code &nearr;</a>
+          </div>
+        </div>
+
+        <!-- PROJECT 04: AICardio -->
+        <div class="work-row">
+          <div class="work-num">/04</div>
+          <div class="work-title-group">
+            <h3 class="work-title">AICardio</h3>
+            <div class="work-category">Machine Learning &bull; Health Analytics</div>
+          </div>
+          <div class="work-desc">
+            Intelligent heart disease risk prediction platform built on clinical biomarker datasets. Utilizes 9 machine learning model pipelines, regularization, and cross-validation to output instantaneous diagnostic risk probabilities.
           </div>
           <div class="work-tags">
             <span class="tag-chip">Python</span>
@@ -1208,60 +1324,15 @@
           </div>
           <div class="work-actions">
             <a href="https://github.com/adityatv-lab" target="_blank" rel="noopener noreferrer" class="action-link-btn">Code &nearr;</a>
-            <span class="work-arrow">&rarr;</span>
           </div>
         </div>
 
-        <!-- PROJECT 02: YelpCamp -->
+        <!-- PROJECT 05: Telegram Gemini Bot -->
         <div class="work-row">
-          <div class="work-num">/02</div>
-          <div class="work-title-group">
-            <h3 class="work-title">YelpCamp</h3>
-            <div class="work-category">Full-Stack Application &bull; Cloud</div>
-          </div>
-          <div class="work-desc">
-            Full-stack campground discovery and review portal featuring user authentication, session security, geographic clustering with Mapbox GL, and RESTful database management.
-          </div>
-          <div class="work-tags">
-            <span class="tag-chip">Node.js</span>
-            <span class="tag-chip">Express</span>
-            <span class="tag-chip">MongoDB</span>
-            <span class="tag-chip">Mapbox GL</span>
-          </div>
-          <div class="work-actions">
-            <a href="https://github.com/adityatv-lab" target="_blank" rel="noopener noreferrer" class="action-link-btn">Code &nearr;</a>
-            <span class="work-arrow">&rarr;</span>
-          </div>
-        </div>
-
-        <!-- PROJECT 03: 3D Solar Clock -->
-        <div class="work-row">
-          <div class="work-num">/03</div>
-          <div class="work-title-group">
-            <h3 class="work-title">3D Solar Clock</h3>
-            <div class="work-category">Interactive Graphics &bull; WebGL</div>
-          </div>
-          <div class="work-desc">
-            Spatial real-time astronomical chronometer rendered in WebGL. Implements orbit controls, dynamic lighting shaders, and orbital mechanics to visualize local wall-clock time in a 3D celestial arena.
-          </div>
-          <div class="work-tags">
-            <span class="tag-chip">Three.js</span>
-            <span class="tag-chip">WebGL</span>
-            <span class="tag-chip">JavaScript</span>
-            <span class="tag-chip">GLSL</span>
-          </div>
-          <div class="work-actions">
-            <a href="https://github.com/adityatv-lab" target="_blank" rel="noopener noreferrer" class="action-link-btn">Code &nearr;</a>
-            <span class="work-arrow">&rarr;</span>
-          </div>
-        </div>
-
-        <!-- PROJECT 04: Telegram Gemini Bot -->
-        <div class="work-row">
-          <div class="work-num">/04</div>
+          <div class="work-num">/05</div>
           <div class="work-title-group">
             <h3 class="work-title">Telegram Gemini Bot</h3>
-            <div class="work-category">LLM Automation &bull; Backend API</div>
+            <div class="work-category">LLM Automation &bull; Backend Service</div>
           </div>
           <div class="work-desc">
             Production-grade conversational assistant deployed on Render integrating Gemini generative models into Telegram with webhook architecture and asynchronous response streaming.
@@ -1274,28 +1345,6 @@
           </div>
           <div class="work-actions">
             <a href="https://github.com/adityatv-lab" target="_blank" rel="noopener noreferrer" class="action-link-btn">Code &nearr;</a>
-            <span class="work-arrow">&rarr;</span>
-          </div>
-        </div>
-
-        <!-- PROJECT 05: iOS Calculator -->
-        <div class="work-row">
-          <div class="work-num">/05</div>
-          <div class="work-title-group">
-            <h3 class="work-title">iOS Calculator</h3>
-            <div class="work-category">UI/UX Emulation &bull; Frontend</div>
-          </div>
-          <div class="work-desc">
-            Pixel-perfect emulation of the iOS native calculator featuring dynamic state evaluation, floating-point calculation edge case handling, and fluid responsive tactile feedback.
-          </div>
-          <div class="work-tags">
-            <span class="tag-chip">JavaScript</span>
-            <span class="tag-chip">CSS Grid</span>
-            <span class="tag-chip">Semantic HTML</span>
-          </div>
-          <div class="work-actions">
-            <a href="https://github.com/adityatv-lab" target="_blank" rel="noopener noreferrer" class="action-link-btn">Code &nearr;</a>
-            <span class="work-arrow">&rarr;</span>
           </div>
         </div>
 
@@ -1408,7 +1457,7 @@
             </div>
             <h3 class="archive-title">Gym Management System</h3>
             <p class="archive-desc">
-              A comprehensive relational management utility engineered to handle member lifecycle billing, trainer session schedules, and operational reporting. Built with pure modular HTML/CSS/JS frontend and relational database structure.
+              A relational management utility engineered to handle member lifecycle billing, trainer session schedules, and operational reporting. Built with modular HTML/CSS/JS frontend and relational database structure.
             </p>
           </div>
           <div>
@@ -1427,7 +1476,7 @@
           <div>
             <div class="archive-meta">
               <span>SYSTEM #02</span>
-              <span>2024 &bull; ANALYTICS</span>
+              <span>2024 &bull; ACADEMIC ANALYTICS</span>
             </div>
             <h3 class="archive-title">Student Performance Tracker</h3>
             <p class="archive-desc">
@@ -1449,7 +1498,7 @@
     </div>
   </section>
 
-  <!-- SECTION 05: DISPATCH (CONTACT) -->
+  <!-- SECTION 05: DISPATCH (CONTACT FORM DELIVERING DIRECTLY TO ADITIYATV7@GMAIL.COM) -->
   <section class="content-section" id="contact">
     <div class="section-sidebar">
       <div>
@@ -1467,18 +1516,18 @@
           <div>
             <h3 class="contact-lead">Initiate<br />Collaboration.</h3>
             <p class="contact-sub">
-              Have a technical project, engineering challenge, or full-time opportunity? Send an inquiry or connect across direct channels.
+              Have a technical project, engineering challenge, or full-time opportunity? Send a message directly through the dispatch interface or reach out across direct channels.
             </p>
           </div>
 
           <div class="contact-links-stack">
             <div class="contact-direct-item">
               <span class="direct-label">Electronic Mail</span>
-              <a href="mailto:adityatv02@gmail.com" class="direct-value">adityatv02@gmail.com</a>
+              <a href="mailto:aditiyatv7@gmail.com" class="direct-value">aditiyatv7@gmail.com</a>
             </div>
             <div class="contact-direct-item">
               <span class="direct-label">Direct Voice / Line</span>
-              <a href="tel:+919110820132" class="direct-value">+91 9110820132</a>
+              <a href="tel:+919036412907" class="direct-value">+91 9036412907</a>
             </div>
             <div class="contact-direct-item">
               <span class="direct-label">Base Location</span>
@@ -1492,7 +1541,12 @@
         </div>
 
         <div class="contact-form-wrap">
-          <form class="swiss-form" id="portfolio-form" action="mailto:adityatv02@gmail.com" method="POST" enctype="text/plain">
+          <form class="swiss-form" id="portfolio-form" action="https://formsubmit.co/ajax/aditiyatv7@gmail.com" method="POST">
+            <!-- FormSubmit Configuration -->
+            <input type="hidden" name="_subject" value="New Portfolio Inquiry via Swiss Site" />
+            <input type="hidden" name="_template" value="table" />
+            <input type="hidden" name="_captcha" value="false" />
+
             <div class="form-field">
               <label for="form-name">
                 <span>Sender Identity / Name</span>
@@ -1517,10 +1571,12 @@
               <textarea id="form-message" name="message" placeholder="Provide project specifications, timeline, or position details..." required></textarea>
             </div>
 
-            <button type="submit" class="form-submit-btn">
-              <span>Transmit Message</span>
-              <span>&rarr;</span>
+            <button type="submit" class="form-submit-btn" id="submit-btn">
+              <span id="btn-text">Transmit Message</span>
+              <span id="btn-arrow">&rarr;</span>
             </button>
+
+            <div class="form-status-box" id="form-status"></div>
           </form>
         </div>
 
@@ -1546,7 +1602,7 @@
     <div class="footer-cell">
       <div style="font-weight: 600; color: var(--text-main);">NETWORKS</div>
       <a href="https://github.com/adityatv-lab" target="_blank" rel="noopener noreferrer">GitHub &nearr;</a>
-      <a href="mailto:adityatv02@gmail.com">Email &nearr;</a>
+      <a href="mailto:aditiyatv7@gmail.com">Email &nearr;</a>
       <a href="https://adityatv-lab.github.io/aditya-portfolio/" target="_blank" rel="noopener noreferrer">Original Site &nearr;</a>
     </div>
 
@@ -1559,8 +1615,9 @@
     </div>
   </footer>
 
-  <!-- SCRIPT: CLOCK & THEME LOGIC -->
+  <!-- SCRIPT: CLOCK, THEME, AND AJAX DISPATCH HANDLER -->
   <script>
+    // 1. Live Bengaluru Chronometer
     function updateClock() {
       const now = new Date();
       const options = {
@@ -1579,6 +1636,7 @@
     setInterval(updateClock, 1000);
     updateClock();
 
+    // 2. Swiss High-Contrast Theme Toggle
     const themeBtn = document.getElementById('theme-toggle');
     const themeLabel = document.getElementById('theme-label');
     
@@ -1606,6 +1664,50 @@
         themeLabel.textContent = 'DARK [O]';
       }
     }
+
+    // 3. Asynchronous Form Dispatch (Accepts Online Replies)
+    const form = document.getElementById('portfolio-form');
+    const formStatus = document.getElementById('form-status');
+    const submitBtn = document.getElementById('submit-btn');
+    const btnText = document.getElementById('btn-text');
+    const btnArrow = document.getElementById('btn-arrow');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      
+      submitBtn.disabled = true;
+      btnText.textContent = 'TRANSMITTING DATA...';
+      btnArrow.textContent = '...';
+      formStatus.className = 'form-status-box';
+      formStatus.style.display = 'none';
+
+      const formData = new FormData(form);
+
+      try {
+        const response = await fetch(form.action, {
+          method: 'POST',
+          body: formData,
+          headers: {
+            'Accept': 'application/json'
+          }
+        });
+
+        if (response.ok) {
+          formStatus.textContent = 'TRANSMISSION RECEIVED // DISPATCH DELIVERED TO ADITIYATV7@GMAIL.COM';
+          formStatus.className = 'form-status-box success';
+          form.reset();
+        } else {
+          throw new Error('Network dispatch rejected');
+        }
+      } catch (err) {
+        formStatus.textContent = 'DISPATCH ERROR // DIRECT ALTERNATIVE: ADITIYATV7@GMAIL.COM';
+        formStatus.className = 'form-status-box error';
+      } finally {
+        submitBtn.disabled = false;
+        btnText.textContent = 'TRANSMIT MESSAGE';
+        btnArrow.textContent = '→';
+      }
+    });
   </script>
 </body>
 </html>

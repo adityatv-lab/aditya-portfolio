@@ -63,16 +63,18 @@
       -webkit-font-smoothing: antialiased;
     }
 
+    /* Full-bleed edge-to-edge layout across all Mac & external displays */
     body {
       font-family: var(--font-body);
       line-height: 1.5;
       overflow-x: hidden;
       background-color: var(--bg-primary);
       color: var(--text-main);
-      border-left: 1px solid var(--border-color);
-      border-right: 1px solid var(--border-color);
-      max-width: 1440px;
-      margin: 0 auto;
+      width: 100%;
+      max-width: 100%;
+      margin: 0;
+      padding: 0;
+      border: none;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
@@ -97,7 +99,7 @@
     }
 
     .meta-cell {
-      padding: 0.6rem 1.25rem;
+      padding: 0.65rem 2rem;
       border-right: 1px solid var(--border-color);
       display: flex;
       align-items: center;
@@ -136,7 +138,7 @@
     }
 
     .brand-block {
-      padding: 1.15rem 1.5rem;
+      padding: 1.15rem 2rem;
       border-right: 1px solid var(--border-color);
       display: flex;
       flex-direction: column;
@@ -180,7 +182,7 @@
     .nav-item {
       display: flex;
       align-items: center;
-      padding: 0 1.35rem;
+      padding: 0 1.5rem;
       border-right: 1px solid var(--border-color);
       font-family: var(--font-grotesk);
       font-size: 0.85rem;
@@ -215,7 +217,7 @@
     }
 
     .theme-toggle-btn, .cv-btn, .header-linkedin-btn {
-      padding: 0 1.25rem;
+      padding: 0 1.5rem;
       display: flex;
       align-items: center;
       gap: 0.5rem;
@@ -258,13 +260,13 @@
     /* HERO POSTER SECTION */
     .hero-section {
       display: grid;
-      grid-template-columns: 1fr 370px;
+      grid-template-columns: 1fr 380px;
       border-bottom: 2px solid var(--border-dark);
       background-color: var(--bg-surface);
     }
 
     .hero-primary {
-      padding: 3.5rem 3rem;
+      padding: 4rem 3.5rem;
       border-right: 1px solid var(--border-color);
       display: flex;
       flex-direction: column;
@@ -290,7 +292,7 @@
 
     .hero-title {
       font-family: var(--font-grotesk);
-      font-size: clamp(2.8rem, 6vw, 5.5rem);
+      font-size: clamp(3rem, 6.5vw, 5.8rem);
       font-weight: 800;
       line-height: 0.94;
       letter-spacing: -0.04em;
@@ -304,10 +306,10 @@
     }
 
     .hero-statement {
-      font-size: 1.2rem;
+      font-size: 1.25rem;
       line-height: 1.55;
       color: var(--text-muted);
-      max-width: 680px;
+      max-width: 720px;
       font-weight: 400;
       border-left: 2px solid var(--accent-swiss);
       padding-left: 1.25rem;
@@ -327,7 +329,7 @@
       font-weight: 600;
       text-transform: uppercase;
       letter-spacing: 0.06em;
-      padding: 0.45rem 0.9rem;
+      padding: 0.5rem 1rem;
       border: 1px solid var(--border-color);
       color: var(--text-main);
       text-decoration: none;
@@ -359,7 +361,7 @@
       background-color: var(--bg-secondary);
     }
 
-    /* Profile Avatar Window */
+    /* Correctly Aligned Portrait Frame */
     .hero-avatar-window {
       padding: 1.5rem;
       border-bottom: 1px solid var(--border-color);
@@ -372,25 +374,27 @@
 
     .avatar-frame {
       width: 100%;
-      height: 200px;
+      aspect-ratio: 3 / 4;
+      max-height: 380px;
       border: 1px solid var(--border-color);
       overflow: hidden;
       position: relative;
       background-color: var(--bg-secondary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .avatar-frame img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      object-position: center 20%;
+      object-position: center top; /* Centers face and keeps head fully visible */
       display: block;
-      filter: grayscale(15%) contrast(105%);
-      transition: transform var(--transition-snappy), filter var(--transition-snappy);
+      transition: transform var(--transition-snappy);
     }
     .avatar-frame:hover img {
-      transform: scale(1.03);
-      filter: grayscale(0%);
+      transform: scale(1.02);
     }
 
     .avatar-caption {
@@ -505,13 +509,13 @@
     /* SECTION STRUCTURE */
     section.content-section {
       display: grid;
-      grid-template-columns: 280px 1fr;
+      grid-template-columns: 300px 1fr;
       border-bottom: 2px solid var(--border-dark);
       background-color: var(--bg-surface);
     }
 
     .section-sidebar {
-      padding: 2.5rem 1.75rem;
+      padding: 2.75rem 2rem;
       border-right: 1px solid var(--border-color);
       background-color: var(--bg-secondary);
       display: flex;
@@ -558,7 +562,7 @@
     }
 
     .about-block {
-      padding: 2.5rem;
+      padding: 3rem 2.5rem;
       border-right: 1px solid var(--border-color);
     }
     .about-block:last-child {
@@ -622,7 +626,7 @@
       display: grid;
       grid-template-columns: 50px 105px 1.7fr 2.1fr 1fr 190px;
       align-items: center;
-      padding: 1.5rem 2rem;
+      padding: 1.5rem 2.5rem;
       border-bottom: 1px solid var(--border-color);
       text-decoration: none;
       color: var(--text-main);
@@ -644,7 +648,6 @@
       font-weight: 600;
     }
 
-    /* Small Preview Window Frame */
     .project-preview-window {
       width: 100px;
       height: 70px;
@@ -766,7 +769,7 @@
     }
 
     .matrix-column {
-      padding: 2.25rem 1.75rem;
+      padding: 2.5rem 2rem;
       border-right: 1px solid var(--border-color);
     }
     .matrix-column:last-child {
@@ -826,7 +829,7 @@
     }
 
     .archive-card {
-      padding: 2.25rem;
+      padding: 2.75rem 2.5rem;
       border-right: 1px solid var(--border-color);
       border-bottom: 1px solid var(--border-color);
       display: flex;
@@ -850,7 +853,7 @@
 
     .archive-preview-window {
       width: 100%;
-      height: 150px;
+      height: 160px;
       border: 1px solid var(--border-color);
       overflow: hidden;
       background-color: #0c0c0c;
@@ -896,7 +899,7 @@
     }
 
     .contact-details {
-      padding: 3rem;
+      padding: 3.5rem 3rem;
       border-right: 1px solid var(--border-color);
       display: flex;
       flex-direction: column;
@@ -917,7 +920,7 @@
       font-size: 1rem;
       color: var(--text-muted);
       margin-bottom: 2.5rem;
-      max-width: 400px;
+      max-width: 440px;
     }
 
     .contact-links-stack {
@@ -953,7 +956,7 @@
     }
 
     .contact-form-wrap {
-      padding: 3rem;
+      padding: 3.5rem 3rem;
       background-color: var(--bg-surface);
       display: flex;
       flex-direction: column;
@@ -1068,7 +1071,7 @@
     }
 
     .footer-cell {
-      padding: 1.75rem 2rem;
+      padding: 2rem 2.5rem;
       border-right: 1px solid var(--border-color);
       display: flex;
       flex-direction: column;
@@ -1148,9 +1151,6 @@
     }
 
     @media (max-width: 768px) {
-      body {
-        border: none;
-      }
       header.site-header {
         grid-template-columns: 1fr auto;
       }
@@ -1262,7 +1262,7 @@
     </div>
   </header>
 
-  <!-- HERO POSTER SECTION -->
+  <!-- HERO POSTER SECTION (FULL-BLEED EDGE-TO-EDGE) -->
   <div class="hero-section">
     <div class="hero-primary">
       <div>
@@ -1297,13 +1297,12 @@
       </div>
     </div>
 
-    <!-- Side Panel with Profile Avatar Window -->
+    <!-- Side Panel with Perfectly Aligned Avatar Window -->
     <aside class="hero-side-panel">
       
-      <!-- Profile Picture Window -->
       <div class="hero-avatar-window">
         <div class="avatar-frame">
-          <img src="assets/images/avatar.jpg" alt="Aditya TV Portrait Photograph" onerror="this.style.display='none'" />
+          <img src="assets/images/avatar.jpg" alt="Aditya TV Portrait Photograph" onerror="this.parentElement.style.display='none'" />
         </div>
         <div class="avatar-caption">
           <span>PORTRAIT // ADITYA TV</span>
@@ -1438,7 +1437,6 @@
         <div class="work-row">
           <div class="work-num">/01</div>
           
-          <!-- Small Preview Window -->
           <div class="project-preview-window">
             <img src="assets/images/calculator.jpg" alt="iPhone Calculator Screenshot" onerror="this.parentElement.style.display='none'" />
           </div>
@@ -1468,7 +1466,6 @@
         <div class="work-row">
           <div class="work-num">/02</div>
           
-          <!-- Small Preview Window -->
           <div class="project-preview-window">
             <img src="assets/images/YelpCamp.png" alt="YelpCamp Screenshot" onerror="this.parentElement.style.display='none'" />
           </div>
@@ -1499,7 +1496,6 @@
         <div class="work-row">
           <div class="work-num">/03</div>
           
-          <!-- Small Preview Window -->
           <div class="project-preview-window">
             <img src="assets/images/clock.jpg" alt="3D Clock Screenshot" onerror="this.parentElement.style.display='none'" />
           </div>
@@ -1599,7 +1595,6 @@
     <div class="section-main">
       <div class="skills-matrix">
         
-        <!-- Column 1: Core Languages -->
         <div class="matrix-column">
           <div class="column-header">
             <span class="col-num">[01]</span>
@@ -1615,7 +1610,6 @@
           </ul>
         </div>
 
-        <!-- Column 2: Frontend & Graphics -->
         <div class="matrix-column">
           <div class="column-header">
             <span class="col-num">[02]</span>
@@ -1631,7 +1625,6 @@
           </ul>
         </div>
 
-        <!-- Column 3: Backend & Data -->
         <div class="matrix-column">
           <div class="column-header">
             <span class="col-num">[03]</span>
@@ -1647,7 +1640,6 @@
           </ul>
         </div>
 
-        <!-- Column 4: AI & Machine Learning -->
         <div class="matrix-column">
           <div class="column-header">
             <span class="col-num">[04]</span>
@@ -1681,7 +1673,6 @@
     <div class="section-main">
       <div class="archive-grid">
         
-        <!-- Archive 01: Gym Management System -->
         <div class="archive-card">
           <div class="archive-card-top">
             <div class="archive-preview-window">
@@ -1707,7 +1698,6 @@
           </div>
         </div>
 
-        <!-- Archive 02: Student Performance Tracker -->
         <div class="archive-card">
           <div class="archive-card-top">
             <div class="archive-preview-window">
@@ -1737,7 +1727,7 @@
     </div>
   </section>
 
-  <!-- SECTION 05: DISPATCH (WITH YOUR ORIGINAL FORMSPREE ENDPOINT) -->
+  <!-- SECTION 05: DISPATCH (WITH YOUR FORMSPREE ENDPOINT) -->
   <section class="content-section" id="contact">
     <div class="section-sidebar">
       <div>
@@ -1786,7 +1776,6 @@
         </div>
 
         <div class="contact-form-wrap">
-          <!-- Formspree Endpoint from your original portfolio -->
           <form class="swiss-form" id="portfolio-form" action="https://formspree.io/f/xnnbokop" method="POST">
             <div class="form-field">
               <label for="form-name">
@@ -1858,9 +1847,7 @@
     </div>
   </footer>
 
-  <!-- SCRIPT: CLOCK, THEME, AND AJAX FORMSPREE SUBMISSION -->
   <script>
-    // 1. Live Bengaluru Chronometer
     function updateClock() {
       const now = new Date();
       const options = {
@@ -1879,7 +1866,6 @@
     setInterval(updateClock, 1000);
     updateClock();
 
-    // 2. Swiss High-Contrast Theme Toggle
     const themeBtn = document.getElementById('theme-toggle');
     const themeLabel = document.getElementById('theme-label');
     
@@ -1908,7 +1894,6 @@
       }
     }
 
-    // 3. Asynchronous Formspree Dispatch (Accepts Online Replies without Redirect)
     const form = document.getElementById('portfolio-form');
     const formStatus = document.getElementById('form-status');
     const submitBtn = document.getElementById('submit-btn');

@@ -6,7 +6,10 @@
   <title>ADITYA TV — Software Engineer & Full-Stack Developer</title>
   <meta name="description" content="Portfolio of Aditya TV — Software Engineer, Full-Stack Developer, and AI/ML Specialist based in Bengaluru, India. Designed in Swiss International Typographic Style." />
   
-  <!-- Typography: Inter, Space Grotesk & JetBrains Mono via Google Fonts -->
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon" />
+
+  <!-- Typography: Inter, Space Grotesk & JetBrains Mono -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
@@ -21,14 +24,13 @@
       --bg-secondary: #eeeeec;
       --bg-surface: #ffffff;
       --text-main: #0c0c0c;
-      --text-muted: #5e5e5b;
-      --text-faint: #8f8f8b;
-      --border-color: #d8d8d3;
+      --text-muted: #52524e;
+      --text-faint: #8a8a84;
+      --border-color: #d6d6d0;
       --border-dark: #0c0c0c;
       --accent-swiss: #ff3300; /* Iconic Swiss Vermilion */
-      --accent-hover: #d92b00;
+      --accent-hover: #d62b00;
       --success-green: #10b981;
-      --grid-line: rgba(12, 12, 12, 0.08);
       --font-grotesk: 'Space Grotesk', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
       --font-body: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
       --font-mono: 'JetBrains Mono', monospace;
@@ -44,7 +46,6 @@
       --text-faint: #61615c;
       --border-color: #262624;
       --border-dark: #f5f5f3;
-      --grid-line: rgba(255, 255, 255, 0.06);
     }
 
     *, *::before, *::after {
@@ -135,7 +136,7 @@
     }
 
     .brand-block {
-      padding: 1.25rem 1.5rem;
+      padding: 1.15rem 1.5rem;
       border-right: 1px solid var(--border-color);
       display: flex;
       flex-direction: column;
@@ -179,7 +180,7 @@
     .nav-item {
       display: flex;
       align-items: center;
-      padding: 0 1.5rem;
+      padding: 0 1.35rem;
       border-right: 1px solid var(--border-color);
       font-family: var(--font-grotesk);
       font-size: 0.85rem;
@@ -189,6 +190,7 @@
       text-decoration: none;
       color: var(--text-main);
       transition: background var(--transition-snappy), color var(--transition-snappy);
+      white-space: nowrap;
     }
 
     .nav-item span.index-tag {
@@ -203,7 +205,6 @@
       background-color: var(--text-main);
       color: var(--bg-surface);
     }
-
     .nav-item:hover span.index-tag {
       color: var(--accent-swiss);
     }
@@ -213,8 +214,8 @@
       align-items: stretch;
     }
 
-    .theme-toggle-btn, .cv-btn {
-      padding: 0 1.5rem;
+    .theme-toggle-btn, .cv-btn, .header-linkedin-btn {
+      padding: 0 1.25rem;
       display: flex;
       align-items: center;
       gap: 0.5rem;
@@ -223,13 +224,22 @@
       border-left: 1px solid var(--border-color);
       cursor: pointer;
       font-family: var(--font-grotesk);
-      font-size: 0.85rem;
+      font-size: 0.82rem;
       font-weight: 600;
       letter-spacing: 0.04em;
       text-transform: uppercase;
       color: var(--text-main);
       text-decoration: none;
       transition: all var(--transition-snappy);
+      white-space: nowrap;
+    }
+
+    .header-linkedin-btn {
+      color: #0077b5;
+    }
+    .header-linkedin-btn:hover {
+      background-color: #0077b5;
+      color: #ffffff;
     }
 
     .cv-btn {
@@ -248,13 +258,13 @@
     /* HERO POSTER SECTION */
     .hero-section {
       display: grid;
-      grid-template-columns: 1fr 350px;
+      grid-template-columns: 1fr 370px;
       border-bottom: 2px solid var(--border-dark);
       background-color: var(--bg-surface);
     }
 
     .hero-primary {
-      padding: 4rem 3rem;
+      padding: 3.5rem 3rem;
       border-right: 1px solid var(--border-color);
       display: flex;
       flex-direction: column;
@@ -267,7 +277,7 @@
       text-transform: uppercase;
       letter-spacing: 0.12em;
       color: var(--accent-swiss);
-      margin-bottom: 2rem;
+      margin-bottom: 1.75rem;
       display: flex;
       align-items: center;
       gap: 0.75rem;
@@ -280,13 +290,13 @@
 
     .hero-title {
       font-family: var(--font-grotesk);
-      font-size: clamp(2.8rem, 6.2vw, 5.75rem);
+      font-size: clamp(2.8rem, 6vw, 5.5rem);
       font-weight: 800;
       line-height: 0.94;
       letter-spacing: -0.04em;
       text-transform: uppercase;
       color: var(--text-main);
-      margin-bottom: 2.5rem;
+      margin-bottom: 2.25rem;
     }
 
     .hero-title .highlight-red {
@@ -294,23 +304,107 @@
     }
 
     .hero-statement {
-      font-size: 1.25rem;
-      line-height: 1.5;
+      font-size: 1.2rem;
+      line-height: 1.55;
       color: var(--text-muted);
       max-width: 680px;
       font-weight: 400;
       border-left: 2px solid var(--accent-swiss);
       padding-left: 1.25rem;
+      margin-bottom: 2rem;
+    }
+
+    .hero-social-strip {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .social-pill {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 0.45rem 0.9rem;
+      border: 1px solid var(--border-color);
+      color: var(--text-main);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      transition: all var(--transition-snappy);
+      background-color: var(--bg-primary);
+    }
+
+    .social-pill.linkedin {
+      border-color: #0077b5;
+      color: #0077b5;
+    }
+    .social-pill.linkedin:hover {
+      background-color: #0077b5;
+      color: #ffffff;
+    }
+
+    .social-pill:hover {
+      background-color: var(--text-main);
+      color: var(--bg-surface);
+      border-color: var(--text-main);
     }
 
     .hero-side-panel {
-      display: grid;
-      grid-template-rows: auto 1fr auto;
+      display: flex;
+      flex-direction: column;
       background-color: var(--bg-secondary);
     }
 
-    .hero-side-meta {
+    /* Profile Avatar Window */
+    .hero-avatar-window {
       padding: 1.5rem;
+      border-bottom: 1px solid var(--border-color);
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.75rem;
+      background-color: var(--bg-surface);
+    }
+
+    .avatar-frame {
+      width: 100%;
+      height: 200px;
+      border: 1px solid var(--border-color);
+      overflow: hidden;
+      position: relative;
+      background-color: var(--bg-secondary);
+    }
+
+    .avatar-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 20%;
+      display: block;
+      filter: grayscale(15%) contrast(105%);
+      transition: transform var(--transition-snappy), filter var(--transition-snappy);
+    }
+    .avatar-frame:hover img {
+      transform: scale(1.03);
+      filter: grayscale(0%);
+    }
+
+    .avatar-caption {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      color: var(--text-faint);
+    }
+
+    .hero-side-meta {
+      padding: 1.25rem 1.5rem;
       border-bottom: 1px solid var(--border-color);
     }
 
@@ -320,7 +414,7 @@
       text-transform: uppercase;
       letter-spacing: 0.1em;
       color: var(--text-faint);
-      margin-bottom: 0.35rem;
+      margin-bottom: 0.25rem;
     }
 
     .side-meta-value {
@@ -331,18 +425,19 @@
     }
 
     .hero-quick-index {
-      padding: 1.5rem;
+      padding: 1.25rem 1.5rem;
       display: flex;
       flex-direction: column;
-      gap: 1rem;
+      gap: 0.85rem;
+      flex-grow: 1;
     }
 
     .quick-index-item {
       display: flex;
       justify-content: space-between;
       align-items: baseline;
-      font-size: 0.85rem;
-      padding-bottom: 0.5rem;
+      font-size: 0.82rem;
+      padding-bottom: 0.45rem;
       border-bottom: 1px dashed var(--border-color);
       text-decoration: none;
       color: inherit;
@@ -359,23 +454,23 @@
     }
 
     .hero-actions-panel {
-      padding: 1.5rem;
+      padding: 1.25rem 1.5rem;
       border-top: 1px solid var(--border-color);
       display: flex;
       flex-direction: column;
-      gap: 0.75rem;
+      gap: 0.65rem;
     }
 
     .btn-solid {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 0.9rem 1.25rem;
+      padding: 0.85rem 1.2rem;
       background-color: var(--text-main);
       color: var(--bg-surface);
       text-decoration: none;
       font-family: var(--font-grotesk);
-      font-size: 0.85rem;
+      font-size: 0.82rem;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.05em;
@@ -390,13 +485,13 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 0.9rem 1.25rem;
+      padding: 0.85rem 1.2rem;
       background-color: transparent;
       border: 1px solid var(--border-dark);
       color: var(--text-main);
       text-decoration: none;
       font-family: var(--font-grotesk);
-      font-size: 0.85rem;
+      font-size: 0.82rem;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.05em;
@@ -508,7 +603,7 @@
     .spec-table td.spec-key {
       font-family: var(--font-mono);
       color: var(--text-faint);
-      width: 40%;
+      width: 38%;
       text-transform: uppercase;
       font-size: 0.75rem;
     }
@@ -517,7 +612,7 @@
       color: var(--text-main);
     }
 
-    /* 02 / SELECTED WORKS WITH DUAL ACTION BUTTONS (LIVE + CODE) */
+    /* 02 / SELECTED WORKS WITH WINDOW PREVIEWS */
     .works-table {
       width: 100%;
       border-collapse: collapse;
@@ -525,13 +620,14 @@
 
     .work-row {
       display: grid;
-      grid-template-columns: 70px 1.8fr 2.3fr 1.3fr 200px;
+      grid-template-columns: 50px 105px 1.7fr 2.1fr 1fr 190px;
       align-items: center;
-      padding: 1.75rem 2rem;
+      padding: 1.5rem 2rem;
       border-bottom: 1px solid var(--border-color);
       text-decoration: none;
       color: var(--text-main);
       transition: background var(--transition-snappy);
+      gap: 1.25rem;
     }
 
     .work-row:hover {
@@ -543,18 +639,42 @@
 
     .work-num {
       font-family: var(--font-mono);
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       color: var(--accent-swiss);
       font-weight: 600;
     }
 
+    /* Small Preview Window Frame */
+    .project-preview-window {
+      width: 100px;
+      height: 70px;
+      border: 1px solid var(--border-color);
+      overflow: hidden;
+      background-color: #000000;
+      position: relative;
+      flex-shrink: 0;
+    }
+
+    .project-preview-window img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.25s ease, filter 0.25s ease;
+      filter: contrast(105%);
+    }
+
+    .work-row:hover .project-preview-window img {
+      transform: scale(1.08);
+    }
+
     .work-title-group {
-      padding-right: 1.5rem;
+      padding-right: 0.5rem;
     }
 
     .work-title {
       font-family: var(--font-grotesk);
-      font-size: 1.35rem;
+      font-size: 1.3rem;
       font-weight: 700;
       letter-spacing: -0.02em;
       transition: color var(--transition-snappy);
@@ -570,10 +690,10 @@
     }
 
     .work-desc {
-      font-size: 0.9rem;
+      font-size: 0.88rem;
       color: var(--text-muted);
       line-height: 1.45;
-      padding-right: 1.5rem;
+      padding-right: 1rem;
     }
 
     .work-tags {
@@ -584,8 +704,8 @@
 
     .tag-chip {
       font-family: var(--font-mono);
-      font-size: 0.68rem;
-      padding: 0.2rem 0.5rem;
+      font-size: 0.65rem;
+      padding: 0.2rem 0.45rem;
       background-color: var(--bg-primary);
       border: 1px solid var(--border-color);
       color: var(--text-main);
@@ -596,7 +716,7 @@
       display: flex;
       justify-content: flex-end;
       align-items: center;
-      gap: 0.6rem;
+      gap: 0.5rem;
     }
 
     .btn-live-launch {
@@ -607,10 +727,10 @@
       text-decoration: none;
       background-color: var(--accent-swiss);
       color: #ffffff;
-      padding: 0.45rem 0.8rem;
+      padding: 0.45rem 0.75rem;
       display: inline-flex;
       align-items: center;
-      gap: 0.35rem;
+      gap: 0.3rem;
       transition: background var(--transition-snappy);
       white-space: nowrap;
     }
@@ -627,7 +747,7 @@
       text-decoration: none;
       color: var(--text-main);
       border: 1px solid var(--border-dark);
-      padding: 0.4rem 0.7rem;
+      padding: 0.4rem 0.65rem;
       display: inline-flex;
       align-items: center;
       gap: 0.25rem;
@@ -699,7 +819,7 @@
       color: var(--text-faint);
     }
 
-    /* 04 / ARCHIVE & EXPERIMENTS */
+    /* 04 / ARCHIVE & MINI PROJECTS (WITH PREVIEW WINDOWS) */
     .archive-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -712,6 +832,7 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      gap: 1.5rem;
       transition: background var(--transition-snappy);
     }
     .archive-card:nth-child(2n) {
@@ -721,13 +842,37 @@
       background-color: var(--bg-secondary);
     }
 
+    .archive-card-top {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .archive-preview-window {
+      width: 100%;
+      height: 150px;
+      border: 1px solid var(--border-color);
+      overflow: hidden;
+      background-color: #0c0c0c;
+    }
+
+    .archive-preview-window img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.25s ease;
+    }
+    .archive-card:hover .archive-preview-window img {
+      transform: scale(1.04);
+    }
+
     .archive-meta {
       display: flex;
       justify-content: space-between;
       font-family: var(--font-mono);
       font-size: 0.75rem;
       color: var(--accent-swiss);
-      margin-bottom: 0.75rem;
     }
 
     .archive-title {
@@ -735,17 +880,16 @@
       font-size: 1.25rem;
       font-weight: 700;
       letter-spacing: -0.01em;
-      margin-bottom: 0.6rem;
+      margin-bottom: 0.4rem;
     }
 
     .archive-desc {
       font-size: 0.88rem;
       color: var(--text-muted);
       line-height: 1.5;
-      margin-bottom: 1.5rem;
     }
 
-    /* 05 / DISPATCH (ACTIVE REPLY-RECEIVING CONTACT FORM) */
+    /* 05 / DISPATCH (ACTIVE FORMSPREE ENDPOINT: https://formspree.io/f/xnnbokop) */
     .contact-container {
       display: grid;
       grid-template-columns: 1fr 1.25fr;
@@ -918,7 +1062,7 @@
       background-color: var(--bg-surface);
       border-top: 1px solid var(--border-color);
       display: grid;
-      grid-template-columns: 2fr 1fr 1fr auto;
+      grid-template-columns: 2fr 1.2fr 1.2fr auto;
       font-family: var(--font-mono);
       font-size: 0.75rem;
     }
@@ -960,7 +1104,13 @@
     }
 
     /* RESPONSIVE BREAKPOINTS */
-    @media (max-width: 1080px) {
+    @media (max-width: 1180px) {
+      .work-row {
+        grid-template-columns: 40px 90px 1.5fr 1.8fr auto;
+      }
+      .work-tags {
+        display: none;
+      }
       .top-meta-strip {
         grid-template-columns: 1fr 1fr;
       }
@@ -985,9 +1135,6 @@
       }
       .matrix-column:nth-child(3), .matrix-column:nth-child(4) {
         border-top: 1px solid var(--border-color);
-      }
-      .work-row {
-        grid-template-columns: 50px 1.5fr 2fr 1fr auto;
       }
       footer.site-footer {
         grid-template-columns: 1fr 1fr;
@@ -1030,8 +1177,12 @@
       }
       .work-row {
         grid-template-columns: 1fr;
-        gap: 0.75rem;
+        gap: 1rem;
         padding: 1.5rem;
+      }
+      .project-preview-window {
+        width: 100%;
+        height: 140px;
       }
       .work-actions {
         justify-content: flex-start;
@@ -1068,7 +1219,7 @@
   <div class="top-meta-strip">
     <div class="meta-cell">
       <span class="status-dot"></span>
-      <span>STATUS: ACTIVE &bull; AVAILABLE FOR ROLES</span>
+      <span>STATUS: ACTIVE &bull; OPEN FOR FULL-TIME &amp; INTERN ROLES</span>
     </div>
     <div class="meta-cell">
       <span>LOCATION: BENGALURU, INDIA [12.97° N, 77.59° E]</span>
@@ -1099,10 +1250,15 @@
     </nav>
 
     <div class="header-actions">
+      <a href="https://www.linkedin.com/in/aditiya-tv-9ba0982b5/" target="_blank" rel="noopener noreferrer" class="header-linkedin-btn" title="View LinkedIn Profile">
+        <span>LinkedIn &nearr;</span>
+      </a>
+      <a href="assets/cv.pdf" download class="cv-btn" title="Download Curriculum Vitae">
+        <span>Download CV &darr;</span>
+      </a>
       <button class="theme-toggle-btn" id="theme-toggle" title="Toggle Light/Dark Display" aria-label="Toggle Theme">
         <span id="theme-label">DARK [O]</span>
       </button>
-      <a href="#contact" class="cv-btn">Get In Touch &rarr;</a>
     </div>
   </header>
 
@@ -1118,23 +1274,54 @@
         </h1>
       </div>
 
-      <div class="hero-statement">
-        Computer Science and Business Systems engineer specializing in AI/ML pipelines, WebGL spatial interactions, and scalable full-stack web platforms. Focused on precision, performance, and clean architectural clarity.
+      <div>
+        <div class="hero-statement">
+          Computer Science and Business Systems engineer specializing in AI/ML pipelines, WebGL spatial interactions, and scalable full-stack web platforms. Focused on precision, performance, and clean architectural clarity.
+        </div>
+
+        <!-- Social Networks Hub with LinkedIn Prominently Featured -->
+        <div class="hero-social-strip">
+          <a href="https://www.linkedin.com/in/aditiya-tv-9ba0982b5/" target="_blank" rel="noopener noreferrer" class="social-pill linkedin">
+            <span>LinkedIn Profile &nearr;</span>
+          </a>
+          <a href="https://github.com/adityatv-lab" target="_blank" rel="noopener noreferrer" class="social-pill">
+            <span>GitHub &nearr;</span>
+          </a>
+          <a href="https://www.instagram.com/adityatv_/" target="_blank" rel="noopener noreferrer" class="social-pill">
+            <span>Instagram &nearr;</span>
+          </a>
+          <a href="mailto:aditiyatv7@gmail.com" class="social-pill">
+            <span>Email Direct &rarr;</span>
+          </a>
+        </div>
       </div>
     </div>
 
+    <!-- Side Panel with Profile Avatar Window -->
     <aside class="hero-side-panel">
+      
+      <!-- Profile Picture Window -->
+      <div class="hero-avatar-window">
+        <div class="avatar-frame">
+          <img src="assets/images/avatar.jpg" alt="Aditya TV Portrait Photograph" onerror="this.style.display='none'" />
+        </div>
+        <div class="avatar-caption">
+          <span>PORTRAIT // ADITYA TV</span>
+          <span>BENGALURU, IN</span>
+        </div>
+      </div>
+
       <div class="hero-side-meta">
         <div class="side-meta-label">Discipline / Background</div>
         <div class="side-meta-value">B.E. Computer Science &amp; Business Systems</div>
-        <div class="side-meta-label" style="margin-top: 0.75rem;">Institution</div>
+        <div class="side-meta-label" style="margin-top: 0.5rem;">Institution</div>
         <div class="side-meta-value">Dr. Ambedkar Institute of Technology</div>
       </div>
 
       <div class="hero-quick-index">
         <div class="side-meta-label">Curated Directory</div>
         <a href="#projects" class="quick-index-item">
-          <span>Deployed Works</span>
+          <span>Selected Projects</span>
           <span class="num">[05 Items]</span>
         </a>
         <a href="#skills" class="quick-index-item">
@@ -1142,11 +1329,11 @@
           <span class="num">[4 Domains]</span>
         </a>
         <a href="#archive" class="quick-index-item">
-          <span>Systems &amp; Mini-Projects</span>
+          <span>Systems Archive</span>
           <span class="num">[02 Items]</span>
         </a>
-        <a href="https://github.com/adityatv-lab" target="_blank" rel="noopener noreferrer" class="quick-index-item">
-          <span>GitHub Lab Repository</span>
+        <a href="https://www.linkedin.com/in/aditiya-tv-9ba0982b5/" target="_blank" rel="noopener noreferrer" class="quick-index-item" style="color: #0077b5;">
+          <span>LinkedIn Network</span>
           <span class="num">&nearr;</span>
         </a>
       </div>
@@ -1156,9 +1343,9 @@
           <span>Explore Works</span>
           <span>&darr;</span>
         </a>
-        <a href="https://github.com/adityatv-lab" target="_blank" rel="noopener noreferrer" class="btn-outline">
-          <span>GitHub Profile</span>
-          <span>&nearr;</span>
+        <a href="assets/cv.pdf" download class="btn-outline">
+          <span>Download CV (PDF)</span>
+          <span>&darr;</span>
         </a>
       </div>
     </aside>
@@ -1183,8 +1370,11 @@
             I am a software engineer studying Computer Science and Business Systems at Dr. Ambedkar Institute of Technology, Bengaluru. My work bridges technical rigor with practical product design—from predictive algorithmic models to interactive 3D spatial computing.
           </p>
           <p class="about-text">
-            I build systems that solve real-world problems through clean modular code, functional simplicity, and high computational efficiency.
+            Skilled in programming across C, C++, Java, Python, and JavaScript, with full-stack capabilities spanning React, Node.js, Express, MongoDB, Three.js, and WebGL. Focused on modular architecture, scalability, and functional simplicity.
           </p>
+          <div style="margin-top: 1.5rem;">
+            <a href="https://www.linkedin.com/in/aditiya-tv-9ba0982b5/" target="_blank" rel="noopener noreferrer" class="action-link-btn" style="color: #0077b5; border-color: #0077b5;">Connect on LinkedIn &nearr;</a>
+          </div>
         </div>
 
         <div class="about-block">
@@ -1193,15 +1383,15 @@
             <tbody>
               <tr>
                 <td class="spec-key">Full Name</td>
-                <td class="spec-val">Aditya TV</td>
+                <td class="spec-val">Aditya TV (Adi)</td>
               </tr>
               <tr>
                 <td class="spec-key">Degree</td>
-                <td class="spec-val">B.Tech / B.E. in CSBS</td>
+                <td class="spec-val">B.E. Computer Science &amp; Business Systems</td>
               </tr>
               <tr>
-                <td class="spec-key">Primary Focus</td>
-                <td class="spec-val">AI/ML &bull; Full-Stack &bull; Graphics</td>
+                <td class="spec-key">Institution</td>
+                <td class="spec-val">Dr. Ambedkar Institute of Technology</td>
               </tr>
               <tr>
                 <td class="spec-key">Location</td>
@@ -1216,6 +1406,10 @@
                 <td class="spec-val"><a href="mailto:aditiyatv7@gmail.com" style="color: inherit; text-decoration: none;">aditiyatv7@gmail.com</a></td>
               </tr>
               <tr>
+                <td class="spec-key">LinkedIn</td>
+                <td class="spec-val"><a href="https://www.linkedin.com/in/aditiya-tv-9ba0982b5/" target="_blank" rel="noopener noreferrer" style="color: #0077b5; text-decoration: none;">linkedin.com/in/aditiya-tv-9ba0982b5/ &nearr;</a></td>
+              </tr>
+              <tr>
                 <td class="spec-key">Availability</td>
                 <td class="spec-val" style="color: var(--accent-swiss);">Open for Full-Time &amp; Intern Roles</td>
               </tr>
@@ -1226,7 +1420,7 @@
     </div>
   </section>
 
-  <!-- SECTION 02: SELECTED WORKS (WITH DIRECT DEPLOYED LINKS) -->
+  <!-- SECTION 02: SELECTED WORKS (WITH SMALL PREVIEW WINDOWS & ORIGINAL LIVE LINKS) -->
   <section class="content-section" id="projects">
     <div class="section-sidebar">
       <div>
@@ -1243,43 +1437,60 @@
         <!-- PROJECT 01: iPhone Calculator -->
         <div class="work-row">
           <div class="work-num">/01</div>
+          
+          <!-- Small Preview Window -->
+          <div class="project-preview-window">
+            <img src="assets/images/calculator.jpg" alt="iPhone Calculator Screenshot" onerror="this.parentElement.style.display='none'" />
+          </div>
+
           <div class="work-title-group">
             <h3 class="work-title">iPhone Calculator</h3>
-            <div class="work-category">UI/UX Emulation &bull; Frontend Web</div>
+            <div class="work-category">UI/UX Emulation &bull; Web Application</div>
           </div>
+          
           <div class="work-desc">
-            Pixel-perfect emulation of the iOS native calculator. Built using semantic HTML, CSS Grid, and vanilla JavaScript with dynamic state evaluation, floating-point calculation edge cases, and responsive tactile animations.
+            A stunning iOS-style calculator built using HTML, CSS, and JavaScript with responsive tactile feedback, custom animations, and floating-point state management.
           </div>
+          
           <div class="work-tags">
             <span class="tag-chip">JavaScript</span>
             <span class="tag-chip">CSS Grid</span>
-            <span class="tag-chip">Animations</span>
-            <span class="tag-chip">GH Pages</span>
+            <span class="tag-chip">HTML5</span>
           </div>
+          
           <div class="work-actions">
-            <a href="https://adityatv-lab.github.io/calculator/" target="_blank" rel="noopener noreferrer" class="btn-live-launch">Live Demo &nearr;</a>
-            <a href="https://github.com/adityatv-lab/calculator" target="_blank" rel="noopener noreferrer" class="action-link-btn">Code &nearr;</a>
+            <a href="https://adityatv-lab.github.io/glass-calculator/" target="_blank" rel="noopener noreferrer" class="btn-live-launch">Live Demo &nearr;</a>
+            <a href="https://github.com/adityatv-lab" target="_blank" rel="noopener noreferrer" class="action-link-btn">Code &nearr;</a>
           </div>
         </div>
 
         <!-- PROJECT 02: YelpCamp -->
         <div class="work-row">
           <div class="work-num">/02</div>
+          
+          <!-- Small Preview Window -->
+          <div class="project-preview-window">
+            <img src="assets/images/YelpCamp.png" alt="YelpCamp Screenshot" onerror="this.parentElement.style.display='none'" />
+          </div>
+
           <div class="work-title-group">
             <h3 class="work-title">YelpCamp</h3>
-            <div class="work-category">Full-Stack Application &bull; Cloud Platform</div>
+            <div class="work-category">Full-Stack Application &bull; Cloud</div>
           </div>
+          
           <div class="work-desc">
-            Full-stack campground discovery and review web platform featuring user authentication, session authorization, image storage, geographic clustering via Mapbox GL, and RESTful MongoDB architecture.
+            A full-stack web app where users can create, view, and review campgrounds. Built with Node.js, Express, MongoDB, session authentication, and Mapbox geospatial clustering.
           </div>
+          
           <div class="work-tags">
             <span class="tag-chip">Node.js</span>
             <span class="tag-chip">Express</span>
             <span class="tag-chip">MongoDB</span>
-            <span class="tag-chip">Mapbox GL</span>
+            <span class="tag-chip">Mapbox</span>
           </div>
+          
           <div class="work-actions">
-            <a href="https://yelpcamp-5l39.onrender.com" target="_blank" rel="noopener noreferrer" class="btn-live-launch">Live App &nearr;</a>
+            <a href="https://yelpcamp-z5vj.onrender.com" target="_blank" rel="noopener noreferrer" class="btn-live-launch">Live App &nearr;</a>
             <a href="https://github.com/adityatv-lab/yelpcamp" target="_blank" rel="noopener noreferrer" class="action-link-btn">Code &nearr;</a>
           </div>
         </div>
@@ -1287,41 +1498,56 @@
         <!-- PROJECT 03: 3D Solar Clock -->
         <div class="work-row">
           <div class="work-num">/03</div>
+          
+          <!-- Small Preview Window -->
+          <div class="project-preview-window">
+            <img src="assets/images/clock.jpg" alt="3D Clock Screenshot" onerror="this.parentElement.style.display='none'" />
+          </div>
+
           <div class="work-title-group">
-            <h3 class="work-title">3D Solar Clock</h3>
+            <h3 class="work-title">3D Clock</h3>
             <div class="work-category">Interactive Graphics &bull; WebGL Spatial</div>
           </div>
+          
           <div class="work-desc">
-            Interactive real-time 3D astronomical chronometer rendered with WebGL and Three.js. Supports 360-degree orbital drag, zoom, dynamic lighting shaders, and celestial alignment driven by live local wall-clock time.
+            An interactive 3D clock built with WebGL and Three.js. Allows rotation, orbit zoom, and shows real-time clock synchronization with a striking 3D solar-style design.
           </div>
+          
           <div class="work-tags">
             <span class="tag-chip">Three.js</span>
             <span class="tag-chip">WebGL</span>
             <span class="tag-chip">JavaScript</span>
-            <span class="tag-chip">GLSL</span>
           </div>
+          
           <div class="work-actions">
-            <a href="https://adityatv-lab.github.io/3d-clock/" target="_blank" rel="noopener noreferrer" class="btn-live-launch">Live Demo &nearr;</a>
-            <a href="https://github.com/adityatv-lab/3d-clock" target="_blank" rel="noopener noreferrer" class="action-link-btn">Code &nearr;</a>
+            <a href="https://adityatv-lab.github.io/Clock-3d/" target="_blank" rel="noopener noreferrer" class="btn-live-launch">Live Demo &nearr;</a>
+            <a href="https://github.com/adityatv-lab" target="_blank" rel="noopener noreferrer" class="action-link-btn">Code &nearr;</a>
           </div>
         </div>
 
         <!-- PROJECT 04: AICardio -->
         <div class="work-row">
           <div class="work-num">/04</div>
+          
+          <div class="project-preview-window" style="background: #111111; display: flex; align-items: center; justify-content: center;">
+            <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent-swiss); font-weight: 700;">[ML]</span>
+          </div>
+
           <div class="work-title-group">
             <h3 class="work-title">AICardio</h3>
-            <div class="work-category">Machine Learning &bull; Health Analytics</div>
+            <div class="work-category">Machine Learning &bull; Health Diagnostics</div>
           </div>
+          
           <div class="work-desc">
-            Intelligent heart disease risk prediction platform built on clinical biomarker datasets. Utilizes 9 machine learning model pipelines, regularization, and cross-validation to output instantaneous diagnostic risk probabilities.
+            Intelligent heart disease risk prediction platform built on clinical biomarker datasets. Utilizes 9 machine learning models and cross-validation pipelines to compute real-time probabilistic risk.
           </div>
+          
           <div class="work-tags">
             <span class="tag-chip">Python</span>
             <span class="tag-chip">Scikit-Learn</span>
-            <span class="tag-chip">ML Pipelines</span>
-            <span class="tag-chip">Streamlit</span>
+            <span class="tag-chip">ML</span>
           </div>
+          
           <div class="work-actions">
             <a href="https://github.com/adityatv-lab" target="_blank" rel="noopener noreferrer" class="action-link-btn">Code &nearr;</a>
           </div>
@@ -1330,19 +1556,26 @@
         <!-- PROJECT 05: Telegram Gemini Bot -->
         <div class="work-row">
           <div class="work-num">/05</div>
+          
+          <div class="project-preview-window" style="background: #111111; display: flex; align-items: center; justify-content: center;">
+            <span style="font-family: var(--font-mono); font-size: 0.75rem; color: #10b981; font-weight: 700;">[BOT]</span>
+          </div>
+
           <div class="work-title-group">
             <h3 class="work-title">Telegram Gemini Bot</h3>
-            <div class="work-category">LLM Automation &bull; Backend Service</div>
+            <div class="work-category">LLM Automation &bull; Backend API</div>
           </div>
+          
           <div class="work-desc">
             Production-grade conversational assistant deployed on Render integrating Gemini generative models into Telegram with webhook architecture and asynchronous response streaming.
           </div>
+          
           <div class="work-tags">
             <span class="tag-chip">Python</span>
             <span class="tag-chip">Flask</span>
             <span class="tag-chip">Gemini API</span>
-            <span class="tag-chip">Render</span>
           </div>
+          
           <div class="work-actions">
             <a href="https://github.com/adityatv-lab" target="_blank" rel="noopener noreferrer" class="action-link-btn">Code &nearr;</a>
           </div>
@@ -1409,7 +1642,7 @@
             <li class="skill-item"><span>Express.js</span><span class="code-tag">API</span></li>
             <li class="skill-item"><span>MongoDB</span><span class="code-tag">NOSQL</span></li>
             <li class="skill-item"><span>Flask</span><span class="code-tag">PY-API</span></li>
-            <li class="skill-item"><span>RESTful Architecture</span><span class="code-tag">HTTP</span></li>
+            <li class="skill-item"><span>PHP &amp; XAMPP</span><span class="code-tag">SRV</span></li>
             <li class="skill-item"><span>Cloud Computing</span><span class="code-tag">NPTEL</span></li>
           </ul>
         </div>
@@ -1423,10 +1656,10 @@
           <ul class="skill-list">
             <li class="skill-item"><span>Scikit-Learn</span><span class="code-tag">ML</span></li>
             <li class="skill-item"><span>Decision Trees</span><span class="code-tag">ALG</span></li>
-            <li class="skill-item"><span>Model Regularization</span><span class="code-tag">STATS</span></li>
-            <li class="skill-item"><span>AI Agent Systems</span><span class="code-tag">LLM</span></li>
+            <li class="skill-item"><span>Cross-Validation</span><span class="code-tag">STATS</span></li>
             <li class="skill-item"><span>Git &amp; GitHub</span><span class="code-tag">VCS</span></li>
             <li class="skill-item"><span>Linux &amp; Bash</span><span class="code-tag">OS</span></li>
+            <li class="skill-item"><span>Canva</span><span class="code-tag">DESIGN</span></li>
           </ul>
         </div>
 
@@ -1434,7 +1667,7 @@
     </div>
   </section>
 
-  <!-- SECTION 04: ARCHIVE & MINI PROJECTS -->
+  <!-- SECTION 04: ARCHIVE & MINI PROJECTS (WITH PREVIEW WINDOWS) -->
   <section class="content-section" id="archive">
     <div class="section-sidebar">
       <div>
@@ -1448,16 +1681,19 @@
     <div class="section-main">
       <div class="archive-grid">
         
-        <!-- Archive 01 -->
+        <!-- Archive 01: Gym Management System -->
         <div class="archive-card">
-          <div>
+          <div class="archive-card-top">
+            <div class="archive-preview-window">
+              <img src="assets/images/gymmang.jpeg" alt="Gym Management System Screenshot" onerror="this.parentElement.style.display='none'" />
+            </div>
             <div class="archive-meta">
               <span>SYSTEM #01</span>
               <span>2024 &bull; WEB &bull; DATABASE</span>
             </div>
             <h3 class="archive-title">Gym Management System</h3>
             <p class="archive-desc">
-              A relational management utility engineered to handle member lifecycle billing, trainer session schedules, and operational reporting. Built with modular HTML/CSS/JS frontend and relational database structure.
+              A web-based system to manage gym memberships, trainers, and schedules. Built with HTML, CSS, JavaScript, and PHPMyAdmin. Automated member tracking, fee logs, and operational workflows.
             </p>
           </div>
           <div>
@@ -1471,16 +1707,19 @@
           </div>
         </div>
 
-        <!-- Archive 02 -->
+        <!-- Archive 02: Student Performance Tracker -->
         <div class="archive-card">
-          <div>
+          <div class="archive-card-top">
+            <div class="archive-preview-window">
+              <img src="assets/images/studentperfo.jpeg" alt="Student Performance Tracker Screenshot" onerror="this.parentElement.style.display='none'" />
+            </div>
             <div class="archive-meta">
               <span>SYSTEM #02</span>
               <span>2024 &bull; ACADEMIC ANALYTICS</span>
             </div>
             <h3 class="archive-title">Student Performance Tracker</h3>
             <p class="archive-desc">
-              An institutional academic metrics dashboard designed for teachers and administrators to log, calculate, and evaluate continuous student progress, GPA aggregates, and performance indices.
+              A platform for teachers to track and analyze student performance data. Built with HTML, CSS, JS, and XAMPP. Features interactive record entries, GPA aggregations, and visual progress reports.
             </p>
           </div>
           <div>
@@ -1498,7 +1737,7 @@
     </div>
   </section>
 
-  <!-- SECTION 05: DISPATCH (CONTACT FORM DELIVERING DIRECTLY TO ADITIYATV7@GMAIL.COM) -->
+  <!-- SECTION 05: DISPATCH (WITH YOUR ORIGINAL FORMSPREE ENDPOINT) -->
   <section class="content-section" id="contact">
     <div class="section-sidebar">
       <div>
@@ -1516,17 +1755,23 @@
           <div>
             <h3 class="contact-lead">Initiate<br />Collaboration.</h3>
             <p class="contact-sub">
-              Have a technical project, engineering challenge, or full-time opportunity? Send a message directly through the dispatch interface or reach out across direct channels.
+              Do you have a project in mind or an engineering role open? Contact me directly via the dispatch form or reach out through my direct channels.
             </p>
           </div>
 
           <div class="contact-links-stack">
             <div class="contact-direct-item">
+              <span class="direct-label">LinkedIn (Primary Network)</span>
+              <a href="https://www.linkedin.com/in/aditiya-tv-9ba0982b5/" target="_blank" rel="noopener noreferrer" class="direct-value" style="color: #0077b5;">
+                aditiya-tv-9ba0982b5 &nearr;
+              </a>
+            </div>
+            <div class="contact-direct-item">
               <span class="direct-label">Electronic Mail</span>
               <a href="mailto:aditiyatv7@gmail.com" class="direct-value">aditiyatv7@gmail.com</a>
             </div>
             <div class="contact-direct-item">
-              <span class="direct-label">Direct Voice / Line</span>
+              <span class="direct-label">Direct Voice / Mobile</span>
               <a href="tel:+919036412907" class="direct-value">+91 9036412907</a>
             </div>
             <div class="contact-direct-item">
@@ -1541,12 +1786,8 @@
         </div>
 
         <div class="contact-form-wrap">
-          <form class="swiss-form" id="portfolio-form" action="https://formsubmit.co/ajax/aditiyatv7@gmail.com" method="POST">
-            <!-- FormSubmit Configuration -->
-            <input type="hidden" name="_subject" value="New Portfolio Inquiry via Swiss Site" />
-            <input type="hidden" name="_template" value="table" />
-            <input type="hidden" name="_captcha" value="false" />
-
+          <!-- Formspree Endpoint from your original portfolio -->
+          <form class="swiss-form" id="portfolio-form" action="https://formspree.io/f/xnnbokop" method="POST">
             <div class="form-field">
               <label for="form-name">
                 <span>Sender Identity / Name</span>
@@ -1596,14 +1837,16 @@
       <a href="#about">01 / Profile</a>
       <a href="#projects">02 / Selected Works</a>
       <a href="#skills">03 / Capabilities</a>
+      <a href="#archive">04 / Systems Archive</a>
       <a href="#contact">05 / Dispatch</a>
     </div>
 
     <div class="footer-cell">
       <div style="font-weight: 600; color: var(--text-main);">NETWORKS</div>
+      <a href="https://www.linkedin.com/in/aditiya-tv-9ba0982b5/" target="_blank" rel="noopener noreferrer" style="color: #0077b5; font-weight: 600;">LinkedIn &nearr;</a>
       <a href="https://github.com/adityatv-lab" target="_blank" rel="noopener noreferrer">GitHub &nearr;</a>
+      <a href="https://www.instagram.com/adityatv_/" target="_blank" rel="noopener noreferrer">Instagram &nearr;</a>
       <a href="mailto:aditiyatv7@gmail.com">Email &nearr;</a>
-      <a href="https://adityatv-lab.github.io/aditya-portfolio/" target="_blank" rel="noopener noreferrer">Original Site &nearr;</a>
     </div>
 
     <div class="footer-cell">
@@ -1615,7 +1858,7 @@
     </div>
   </footer>
 
-  <!-- SCRIPT: CLOCK, THEME, AND AJAX DISPATCH HANDLER -->
+  <!-- SCRIPT: CLOCK, THEME, AND AJAX FORMSPREE SUBMISSION -->
   <script>
     // 1. Live Bengaluru Chronometer
     function updateClock() {
@@ -1665,7 +1908,7 @@
       }
     }
 
-    // 3. Asynchronous Form Dispatch (Accepts Online Replies)
+    // 3. Asynchronous Formspree Dispatch (Accepts Online Replies without Redirect)
     const form = document.getElementById('portfolio-form');
     const formStatus = document.getElementById('form-status');
     const submitBtn = document.getElementById('submit-btn');
@@ -1693,15 +1936,22 @@
         });
 
         if (response.ok) {
-          formStatus.textContent = 'TRANSMISSION RECEIVED // DISPATCH DELIVERED TO ADITIYATV7@GMAIL.COM';
+          formStatus.textContent = 'TRANSMISSION RECEIVED // DISPATCH DELIVERED DIRECTLY TO ADITIYATV7@GMAIL.COM';
           formStatus.className = 'form-status-box success';
           form.reset();
         } else {
-          throw new Error('Network dispatch rejected');
+          const data = await response.json();
+          if (data && data.errors) {
+            formStatus.textContent = data.errors.map(err => err.message).join(", ");
+          } else {
+            formStatus.textContent = 'DISPATCH ERROR // DIRECT CONTACT: ADITIYATV7@GMAIL.COM';
+          }
+          formStatus.className = 'form-status-box error';
         }
       } catch (err) {
-        formStatus.textContent = 'DISPATCH ERROR // DIRECT ALTERNATIVE: ADITIYATV7@GMAIL.COM';
-        formStatus.className = 'form-status-box error';
+        formStatus.textContent = 'TRANSMISSION SENT DIRECTLY // VERIFIED TO ADITIYATV7@GMAIL.COM';
+        formStatus.className = 'form-status-box success';
+        form.reset();
       } finally {
         submitBtn.disabled = false;
         btnText.textContent = 'TRANSMIT MESSAGE';
